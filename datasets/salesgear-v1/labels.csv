@@ -1,0 +1,204 @@
+id,label,timeframe,near_miss,reopen_worthy,months_elapsed,due,brushoff,note
+m001,went_quiet,not_stated,False,False,7,,False,
+m002,hard_no,not_stated,True,False,23,,False,quotes 'revisit' to refuse it
+m003,hard_no,not_stated,False,False,10,,False,
+m004,went_quiet,not_stated,True,False,20,,False,missed meeting
+m005,went_quiet,not_stated,False,False,13,,False,
+m006,hard_no,not_stated,True,False,15,,False,permanent stop
+m007,soft_deferral,6_to_12_months,False,True,23,Oct 2025,False,
+m008,went_quiet,not_stated,False,False,17,,False,
+m009,hard_no,not_stated,False,False,20,,False,
+m010,went_quiet,not_stated,False,False,8,,False,
+m011,soft_deferral,3_to_6_months,False,True,10,Apr 2026,False,
+m012,hard_no,not_stated,False,False,20,,False,
+m013,hard_no,not_stated,False,False,9,,False,
+m014,hard_no,not_stated,False,False,3,,False,
+m015,went_quiet,not_stated,True,False,14,,False,seller asks which quarter suits
+m016,soft_deferral,within_3_months,False,True,5,Jul 2026,False,
+m017,soft_deferral,6_to_12_months,False,True,13,Jun 2026,False,
+m018,soft_deferral,not_stated,False,False,5,,False,
+m019,went_quiet,not_stated,False,False,12,,False,
+m020,hard_no,not_stated,True,False,4,,False,"budget cut, stated as final"
+m021,soft_deferral,3_to_6_months,False,True,8,Jul 2026,False,
+m022,went_quiet,not_stated,False,False,19,,False,
+m023,hard_no,not_stated,True,False,19,,False,"warm tone, firm no"
+m024,went_quiet,not_stated,True,False,12,,False,seller assumes the buyer is busy until January
+m025,soft_deferral,within_3_months,True,True,15,Aug 2025,False,"lower-case, casual"
+m026,soft_deferral,within_3_months,True,True,16,Aug 2025,False,buyer deferred; seller's reply is the last message
+m027,hard_no,not_stated,False,False,6,,False,
+m028,hard_no,not_stated,True,False,2,,False,answers a timing question with a no
+m029,went_quiet,not_stated,False,False,6,,False,
+m030,hard_no,not_stated,False,False,11,,False,
+m031,not_sales,not_stated,True,False,8,,False,sabbatical auto-reply with a date
+m032,soft_deferral,6_to_12_months,False,True,21,Jul 2025,False,
+m033,not_sales,not_stated,True,False,7,,False,trial-expiry notice
+m034,soft_deferral,over_a_year,False,True,24,Jan 2026,False,
+m035,soft_deferral,within_3_months,False,True,18,Apr 2025,False,
+m036,soft_deferral,3_to_6_months,False,True,6,Sep 2026,False,
+m037,not_sales,not_stated,True,False,23,,False,podcast about 'not right now'
+m038,hard_no,not_stated,False,False,11,,False,
+m039,went_quiet,not_stated,False,False,13,,False,
+m040,soft_deferral,within_3_months,False,True,3,Sep 2026,False,
+m041,soft_deferral,within_3_months,True,True,8,Apr 2026,False,"objections first, deferral at the end"
+m042,not_sales,not_stated,False,False,4,,False,
+m043,hard_no,not_stated,False,False,24,,False,
+m044,soft_deferral,3_to_6_months,True,True,22,Apr 2025,False,buyer deferred; seller's reply is the last message
+m045,went_quiet,not_stated,True,False,18,,False,'will get back to you' is not a position
+m046,went_quiet,not_stated,True,False,11,,False,buyer's last message is scheduling logistics
+m047,not_sales,not_stated,False,False,15,,False,
+m048,hard_no,not_stated,False,False,9,,False,
+m049,went_quiet,not_stated,True,False,4,,False,deferral words are the seller's
+m050,soft_deferral,3_to_6_months,False,True,11,Mar 2026,False,
+m051,went_quiet,not_stated,True,False,16,,False,'comparing options' is not a position
+m052,went_quiet,not_stated,True,False,22,,False,seller's breakup email says 'timing isn't right'
+m053,not_sales,not_stated,True,False,4,,False,post-event marketing
+m054,went_quiet,not_stated,False,False,2,,False,
+m055,soft_deferral,6_to_12_months,False,False,4,Jan 2027,False,
+m056,soft_deferral,not_stated,False,True,18,,False,
+m057,hard_no,not_stated,False,False,6,,False,
+m058,hard_no,not_stated,False,False,18,,False,
+m059,not_sales,not_stated,True,False,6,,False,travel auto-reply
+m060,went_quiet,not_stated,False,False,23,,False,
+m061,hard_no,not_stated,False,False,22,,False,
+m062,went_quiet,not_stated,True,False,16,,False,seller suggests September
+m063,went_quiet,not_stated,False,False,8,,False,
+m064,soft_deferral,6_to_12_months,False,False,3,Apr 2027,False,
+m065,soft_deferral,6_to_12_months,False,True,17,Apr 2026,False,
+m066,not_sales,not_stated,True,False,18,,False,support ticket 'reopen'
+m067,not_sales,not_stated,False,False,8,,False,
+m068,hard_no,not_stated,True,False,4,,False,"'not now, not later'"
+m069,soft_deferral,3_to_6_months,True,False,7,Aug 2026,True,low on the list
+m070,soft_deferral,3_to_6_months,False,True,20,Jul 2025,False,
+m071,soft_deferral,6_to_12_months,False,False,6,Feb 2027,False,
+m072,soft_deferral,within_3_months,True,True,11,Jan 2026,False,two-word reply
+m073,not_sales,not_stated,False,False,11,,False,
+m074,hard_no,not_stated,False,False,5,,False,
+m075,soft_deferral,3_to_6_months,True,True,10,Mar 2026,False,"formal, non-native English"
+m076,hard_no,not_stated,False,False,16,,False,
+m077,hard_no,not_stated,True,False,15,,False,"'we'll reach out', no invitation back"
+m078,hard_no,not_stated,False,False,13,,False,
+m079,hard_no,not_stated,True,False,6,,False,requirement the product will never meet
+m080,went_quiet,not_stated,True,False,12,,False,a person's 'trial ends tomorrow' email
+m081,went_quiet,not_stated,False,False,18,,False,
+m082,soft_deferral,3_to_6_months,False,True,15,Oct 2025,False,
+m083,hard_no,not_stated,True,False,8,,False,"mentions a future date, but to rule it out"
+m084,not_sales,not_stated,True,False,13,,False,left-the-company auto-reply
+m085,soft_deferral,within_3_months,True,True,3,Sep 2026,False,buyer deferred; seller's reply is the last message
+m086,hard_no,not_stated,True,False,7,,False,quoted seller 'circling back' below a no
+m087,not_sales,not_stated,False,False,17,,False,
+m088,went_quiet,not_stated,False,False,1,,False,
+m089,hard_no,not_stated,True,False,10,,False,uses 'circle back next quarter' to refuse
+m090,soft_deferral,within_3_months,False,True,9,Jan 2026,False,
+m091,soft_deferral,3_to_6_months,False,True,23,Apr 2025,False,
+m092,not_sales,not_stated,False,False,12,,False,
+m093,not_sales,not_stated,False,False,14,,False,
+m094,not_sales,not_stated,True,False,10,,False,recruiter outreach
+m095,soft_deferral,6_to_12_months,False,True,19,Sep 2025,False,
+m096,hard_no,not_stated,False,False,9,,False,
+m097,soft_deferral,within_3_months,True,True,19,May 2025,False,written by an assistant on the buyer's behalf
+m098,soft_deferral,3_to_6_months,False,True,4,Sep 2026,False,
+m099,went_quiet,not_stated,True,False,15,,False,seller says 'pick this back up'
+m100,not_sales,not_stated,True,False,3,,False,calendar notice 'moved to next quarter'
+m101,not_sales,not_stated,False,False,5,,False,
+m102,soft_deferral,6_to_12_months,True,False,15,Jun 2026,True,invites a check-back but says it isn't on their list
+m103,soft_deferral,3_to_6_months,False,True,13,Dec 2025,False,
+m104,not_sales,not_stated,True,False,19,,False,internal pipeline reminder
+m105,hard_no,not_stated,False,False,13,,False,
+m106,soft_deferral,6_to_12_months,False,False,9,Oct 2026,False,
+m107,went_quiet,not_stated,False,False,6,,False,
+m108,hard_no,not_stated,False,False,14,,False,
+m109,went_quiet,not_stated,False,False,4,,False,
+m110,went_quiet,not_stated,False,False,9,,False,
+m111,soft_deferral,6_to_12_months,False,True,22,Jun 2025,False,
+m112,not_sales,not_stated,False,False,2,,False,
+m113,went_quiet,not_stated,False,False,7,,False,
+m114,hard_no,not_stated,False,False,7,,False,
+m115,hard_no,not_stated,False,False,18,,False,
+m116,not_sales,not_stated,True,False,12,,False,calendar decline with 'another time'
+m117,went_quiet,not_stated,False,False,24,,False,
+m118,hard_no,not_stated,True,False,7,,False,'this year or next' reads like timing
+m119,went_quiet,not_stated,False,False,14,,False,
+m120,soft_deferral,within_3_months,False,False,1,Nov 2026,False,
+m121,soft_deferral,6_to_12_months,False,False,5,Dec 2026,False,
+m122,hard_no,not_stated,False,False,16,,False,
+m123,hard_no,not_stated,True,False,17,,False,"'stay in touch', but built in-house"
+m124,went_quiet,not_stated,False,False,17,,False,
+m125,soft_deferral,3_to_6_months,False,True,12,Jan 2026,False,
+m126,not_sales,not_stated,True,False,11,,False,auto-reply naming the vendor evaluation
+m127,not_sales,not_stated,True,False,10,,False,parental-leave auto-reply
+m128,went_quiet,not_stated,False,False,3,,False,
+m129,not_sales,not_stated,True,False,2,,False,newsletter with 'revisit'
+m130,hard_no,not_stated,False,False,12,,False,
+m131,not_sales,not_stated,False,False,18,,False,
+m132,soft_deferral,not_stated,False,True,8,,False,
+m133,soft_deferral,not_stated,False,True,10,,False,
+m134,not_sales,not_stated,True,False,6,,False,colleague asking to cover a demo
+m135,soft_deferral,over_a_year,False,True,20,Jul 2026,False,
+m136,not_sales,not_stated,True,False,16,,False,trial-ended notice
+m137,soft_deferral,within_3_months,True,False,11,Jan 2026,True,happy with current tool
+m138,not_sales,not_stated,True,False,17,,False,recruiter follow-up
+m139,went_quiet,not_stated,False,False,9,,False,
+m140,not_sales,not_stated,False,False,22,,False,
+m141,not_sales,not_stated,False,False,3,,False,
+m142,went_quiet,not_stated,False,False,20,,False,
+m143,went_quiet,not_stated,False,False,8,,False,
+m144,hard_no,not_stated,False,False,8,,False,
+m145,not_sales,not_stated,False,False,1,,False,
+m146,soft_deferral,within_3_months,False,True,6,Jun 2026,False,
+m147,went_quiet,not_stated,False,False,10,,False,
+m148,went_quiet,not_stated,True,False,5,,False,seller says 'reach out when ready'
+m149,soft_deferral,within_3_months,False,True,6,May 2026,False,
+m150,hard_no,not_stated,False,False,11,,False,
+m151,went_quiet,not_stated,True,False,9,,False,'I'll come back to you' is not a position
+m152,not_sales,not_stated,False,False,7,,False,
+m153,hard_no,not_stated,True,False,3,,False,'hold off indefinitely'
+m154,soft_deferral,6_to_12_months,False,True,8,Sep 2026,False,
+m155,not_sales,not_stated,False,False,1,,False,
+m156,went_quiet,not_stated,False,False,1,,False,
+m157,soft_deferral,3_to_6_months,False,True,13,Jan 2026,False,
+m158,not_sales,not_stated,False,False,13,,False,
+m159,went_quiet,not_stated,False,False,11,,False,
+m160,went_quiet,not_stated,False,False,3,,False,
+m161,not_sales,not_stated,True,False,5,,False,short auto-reply
+m162,not_sales,not_stated,True,False,9,,False,office-closed auto-reply
+m163,soft_deferral,3_to_6_months,False,False,1,Feb 2027,False,
+m164,went_quiet,not_stated,False,False,6,,False,
+m165,hard_no,not_stated,True,False,21,,False,'maybe in another life'
+m166,not_sales,not_stated,False,False,11,,False,
+m167,not_sales,not_stated,False,False,21,,False,
+m168,went_quiet,not_stated,False,False,5,,False,
+m169,went_quiet,not_stated,False,False,15,,False,
+m170,hard_no,not_stated,False,False,13,,False,
+m171,hard_no,not_stated,False,False,12,,False,
+m172,went_quiet,not_stated,False,False,2,,False,
+m173,soft_deferral,6_to_12_months,True,False,16,Apr 2026,True,just renewed a competitor for two years
+m174,soft_deferral,within_3_months,False,False,2,Oct 2026,False,
+m175,hard_no,not_stated,False,False,14,,False,
+m176,soft_deferral,not_stated,False,False,2,,False,
+m177,not_sales,not_stated,False,False,9,,False,
+m178,hard_no,not_stated,False,False,22,,False,
+m179,hard_no,not_stated,False,False,5,,False,
+m180,went_quiet,not_stated,False,False,10,,False,
+m181,soft_deferral,within_3_months,False,True,7,Apr 2026,False,
+m182,hard_no,not_stated,False,False,17,,False,
+m183,soft_deferral,not_stated,False,True,24,,False,
+m184,hard_no,not_stated,True,False,1,,False,refuses the timing framing
+m185,went_quiet,not_stated,False,False,21,,False,
+m186,soft_deferral,within_3_months,False,True,11,Jan 2026,False,
+m187,soft_deferral,6_to_12_months,False,True,12,Apr 2026,False,
+m188,soft_deferral,within_3_months,True,True,5,Jul 2026,False,conditional on a competitor pilot; seller replied last
+m189,not_sales,not_stated,True,False,20,,False,calendar acceptance
+m190,soft_deferral,3_to_6_months,False,False,2,Dec 2026,False,
+m191,not_sales,not_stated,False,False,8,,False,
+m192,soft_deferral,3_to_6_months,False,False,4,Nov 2026,False,
+m193,soft_deferral,within_3_months,True,True,7,Apr 2026,False,buyer deferred; seller's reply is the last message
+m194,went_quiet,not_stated,True,False,19,,False,seller offers to hold pricing for budget season
+m195,soft_deferral,3_to_6_months,True,True,12,Feb 2026,False,quoted seller text below the reply
+m196,hard_no,not_stated,True,False,2,,False,reply to a check-back
+m197,not_sales,not_stated,True,False,14,,False,out-of-office with a return date
+m198,not_sales,not_stated,False,False,24,,False,
+m199,went_quiet,not_stated,False,False,22,,False,
+m200,went_quiet,not_stated,False,False,11,,False,
+m201,hard_no,not_stated,False,False,12,,False,
+m202,hard_no,not_stated,False,False,8,,False,
+m203,soft_deferral,3_to_6_months,True,False,13,Jan 2026,True,'probably not'

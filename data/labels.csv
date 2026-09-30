@@ -1,0 +1,301 @@
+id,label,trigger_level,timeframe,near_miss,months_elapsed,last_from_seller,contact_role,reopen_worthy
+t000,soft_deferral,4,3_to_6_months,False,3,False,Chief Operating Officer,False
+t001,soft_deferral,3,within_3_months,False,10,False,Fleet Manager,True
+t002,soft_deferral,1,not_stated,False,6,False,VP Operations,True
+t003,hard_no,0,not_stated,False,20,False,RevOps Lead,False
+t004,soft_deferral,4,within_3_months,False,20,False,RevOps Lead,True
+t005,not_sales,0,not_stated,False,10,False,unknown,False
+t006,went_quiet,0,not_stated,False,3,True,IT Manager,False
+t007,went_quiet,0,not_stated,False,20,True,Head of Finance,False
+t008,soft_deferral,2,6_to_12_months,True,18,False,VP Engineering,True
+t009,went_quiet,0,not_stated,True,20,True,Founder & CEO,False
+t010,went_quiet,0,not_stated,True,18,True,Director of Sales,False
+t011,hard_no,0,not_stated,True,8,False,Procurement Manager,False
+t012,not_sales,0,not_stated,False,24,False,unknown,False
+t013,soft_deferral,3,3_to_6_months,True,19,False,Finance Business Partner,True
+t014,hard_no,0,not_stated,True,11,False,RevOps Lead,False
+t015,went_quiet,0,not_stated,True,8,True,VP Engineering,False
+t016,went_quiet,0,not_stated,False,6,True,Procurement Manager,False
+t017,went_quiet,0,not_stated,False,8,True,Finance Business Partner,False
+t018,hard_no,0,not_stated,True,10,False,Head of Logistics,False
+t019,hard_no,0,not_stated,False,23,False,Chief Operating Officer,False
+t020,soft_deferral,2,within_3_months,False,9,False,Senior Buyer,True
+t021,not_sales,0,not_stated,False,14,False,unknown,False
+t022,hard_no,0,not_stated,True,7,False,Fleet Manager,False
+t023,hard_no,0,not_stated,False,8,False,Fleet Manager,False
+t024,soft_deferral,3,3_to_6_months,False,4,False,Senior Buyer,False
+t025,soft_deferral,2,6_to_12_months,True,24,False,Operations Analyst,True
+t026,soft_deferral,4,3_to_6_months,False,9,False,Head of Logistics,True
+t027,went_quiet,0,not_stated,False,18,True,VP Engineering,False
+t028,soft_deferral,3,within_3_months,False,8,False,VP Engineering,True
+t029,went_quiet,0,not_stated,False,16,True,Director of IT,False
+t030,went_quiet,0,not_stated,True,24,True,Procurement Manager,False
+t031,soft_deferral,3,6_to_12_months,False,22,False,Procurement Manager,True
+t032,soft_deferral,1,not_stated,False,17,False,Director of IT,True
+t033,hard_no,0,not_stated,False,16,False,RevOps Lead,False
+t034,hard_no,0,not_stated,False,18,False,Procurement Manager,False
+t035,went_quiet,0,not_stated,False,14,True,VP Operations,False
+t036,hard_no,0,not_stated,True,24,False,RevOps Lead,False
+t037,soft_deferral,4,6_to_12_months,False,6,False,Director of Sales,False
+t038,soft_deferral,2,6_to_12_months,True,17,False,Fleet Manager,True
+t039,hard_no,0,not_stated,False,16,False,Head of Finance,False
+t040,hard_no,0,not_stated,False,20,False,Fleet Manager,False
+t041,went_quiet,0,not_stated,True,12,True,Founder & CEO,False
+t042,soft_deferral,1,not_stated,False,15,False,VP Engineering,True
+t043,soft_deferral,3,within_3_months,False,19,False,Fleet Manager,True
+t044,hard_no,0,not_stated,True,14,False,Chief Operating Officer,False
+t045,went_quiet,0,not_stated,True,15,True,VP Operations,False
+t046,not_sales,0,not_stated,False,12,False,unknown,False
+t047,went_quiet,0,not_stated,True,15,True,IT Manager,False
+t048,went_quiet,0,not_stated,False,3,True,Head of Finance,False
+t049,soft_deferral,2,3_to_6_months,False,7,False,Fleet Manager,True
+t050,went_quiet,0,not_stated,False,24,True,VP Engineering,False
+t051,not_sales,0,not_stated,False,23,False,unknown,False
+t052,went_quiet,0,not_stated,True,18,True,Customer Success Lead,False
+t053,soft_deferral,4,within_3_months,False,12,False,Fleet Manager,True
+t054,not_sales,0,not_stated,True,5,False,unknown,False
+t055,soft_deferral,4,within_3_months,False,5,False,RevOps Lead,True
+t056,hard_no,0,not_stated,True,12,False,IT Manager,False
+t057,soft_deferral,3,6_to_12_months,False,2,False,Director of IT,False
+t058,went_quiet,0,not_stated,True,7,True,Director of Sales,False
+t059,soft_deferral,3,3_to_6_months,True,23,False,Fleet Manager,True
+t060,soft_deferral,4,3_to_6_months,False,4,False,Procurement Manager,False
+t061,not_sales,0,not_stated,False,16,False,unknown,False
+t062,not_sales,0,not_stated,False,9,False,unknown,False
+t063,soft_deferral,2,6_to_12_months,True,3,False,Fleet Manager,False
+t064,hard_no,0,not_stated,False,21,False,VP Operations,False
+t065,hard_no,0,not_stated,True,1,False,Founder & CEO,False
+t066,hard_no,0,not_stated,True,16,False,VP Engineering,False
+t067,not_sales,0,not_stated,True,4,False,unknown,False
+t068,not_sales,0,not_stated,False,19,False,unknown,False
+t069,hard_no,0,not_stated,True,18,False,Founder & CEO,False
+t070,not_sales,0,not_stated,False,14,False,unknown,False
+t071,not_sales,0,not_stated,False,15,False,unknown,False
+t072,went_quiet,0,not_stated,True,24,True,Finance Business Partner,False
+t073,soft_deferral,4,3_to_6_months,False,21,False,VP Operations,True
+t074,soft_deferral,4,within_3_months,False,16,False,RevOps Lead,True
+t075,soft_deferral,3,3_to_6_months,True,23,False,Director of IT,True
+t076,went_quiet,0,not_stated,True,8,True,Director of Sales,False
+t077,not_sales,0,not_stated,True,10,False,Procurement Manager,False
+t078,soft_deferral,2,within_3_months,False,20,False,IT Manager,True
+t079,hard_no,0,not_stated,False,10,False,Finance Business Partner,False
+t080,hard_no,0,not_stated,False,10,False,VP Operations,False
+t081,hard_no,0,not_stated,True,20,False,VP Operations,False
+t082,went_quiet,0,not_stated,False,3,True,Head of Finance,False
+t083,not_sales,0,not_stated,True,15,False,unknown,False
+t084,went_quiet,0,not_stated,True,5,True,Head of Finance,False
+t085,hard_no,0,not_stated,False,1,False,IT Manager,False
+t086,soft_deferral,3,within_3_months,False,22,False,Operations Analyst,True
+t087,not_sales,0,not_stated,True,2,False,unknown,False
+t088,went_quiet,0,not_stated,False,19,True,Senior Buyer,False
+t089,not_sales,0,not_stated,False,1,False,unknown,False
+t090,hard_no,0,not_stated,False,11,False,Fleet Manager,False
+t091,soft_deferral,4,3_to_6_months,False,5,False,Customer Success Lead,False
+t092,soft_deferral,4,3_to_6_months,False,10,False,Chief Operating Officer,True
+t093,hard_no,0,not_stated,False,15,False,IT Manager,False
+t094,not_sales,0,not_stated,False,9,False,unknown,False
+t095,went_quiet,0,not_stated,True,2,True,Director of IT,False
+t096,not_sales,0,not_stated,False,3,False,unknown,False
+t097,went_quiet,0,not_stated,False,9,True,Senior Buyer,False
+t098,hard_no,0,not_stated,False,17,False,Head of Logistics,False
+t099,hard_no,0,not_stated,False,5,False,Director of IT,False
+t100,hard_no,0,not_stated,True,18,False,Chief Operating Officer,False
+t101,soft_deferral,2,within_3_months,False,12,False,Director of Sales,True
+t102,hard_no,0,not_stated,False,20,False,Procurement Manager,False
+t103,soft_deferral,1,not_stated,False,24,False,Head of Logistics,True
+t104,not_sales,0,not_stated,False,19,False,unknown,False
+t105,hard_no,0,not_stated,True,15,False,Customer Success Lead,False
+t106,not_sales,0,not_stated,False,19,False,unknown,False
+t107,hard_no,0,not_stated,False,6,False,Finance Business Partner,False
+t108,soft_deferral,4,6_to_12_months,False,9,False,Head of Finance,False
+t109,hard_no,0,not_stated,True,9,False,Founder & CEO,False
+t110,not_sales,0,not_stated,False,4,False,unknown,False
+t111,soft_deferral,1,not_stated,False,3,False,Head of Finance,False
+t112,soft_deferral,1,not_stated,True,4,False,IT Manager,False
+t113,went_quiet,0,not_stated,True,7,True,VP Engineering,False
+t114,not_sales,0,not_stated,False,24,False,unknown,False
+t115,hard_no,0,not_stated,True,5,False,Founder & CEO,False
+t116,went_quiet,0,not_stated,False,11,True,Head of Logistics,False
+t117,went_quiet,0,not_stated,False,10,True,Customer Success Lead,False
+t118,hard_no,0,not_stated,True,5,False,VP Engineering,False
+t119,went_quiet,0,not_stated,False,22,True,Customer Success Lead,False
+t120,not_sales,0,not_stated,False,11,False,unknown,False
+t121,hard_no,0,not_stated,False,23,False,VP Engineering,False
+t122,went_quiet,0,not_stated,False,16,True,Founder & CEO,False
+t123,soft_deferral,3,3_to_6_months,False,12,False,Director of Sales,True
+t124,went_quiet,0,not_stated,True,18,True,RevOps Lead,False
+t125,not_sales,0,not_stated,False,4,False,unknown,False
+t126,soft_deferral,3,3_to_6_months,True,6,False,Head of Logistics,True
+t127,soft_deferral,4,3_to_6_months,False,17,False,RevOps Lead,True
+t128,hard_no,0,not_stated,False,16,False,Fleet Manager,False
+t129,hard_no,0,not_stated,True,8,False,VP Engineering,False
+t130,went_quiet,0,not_stated,False,13,True,Director of IT,False
+t131,went_quiet,0,not_stated,True,13,True,VP Operations,False
+t132,went_quiet,0,not_stated,True,7,True,Operations Analyst,False
+t133,soft_deferral,2,6_to_12_months,False,19,False,Chief Operating Officer,True
+t134,soft_deferral,2,within_3_months,False,9,False,Fleet Manager,True
+t135,not_sales,0,not_stated,True,17,False,Fleet Manager,False
+t136,soft_deferral,1,not_stated,True,9,False,Procurement Manager,True
+t137,hard_no,0,not_stated,True,5,False,VP Operations,False
+t138,went_quiet,0,not_stated,False,9,True,VP Engineering,False
+t139,soft_deferral,1,not_stated,True,24,False,Procurement Manager,True
+t140,soft_deferral,3,3_to_6_months,True,5,False,Head of Logistics,False
+t141,went_quiet,0,not_stated,False,24,True,Founder & CEO,False
+t142,went_quiet,0,not_stated,False,7,True,Head of Finance,False
+t143,soft_deferral,2,6_to_12_months,True,4,False,Chief Operating Officer,False
+t144,went_quiet,0,not_stated,False,6,True,VP Operations,False
+t145,hard_no,0,not_stated,True,4,False,Chief Operating Officer,False
+t146,went_quiet,0,not_stated,True,19,True,VP Engineering,False
+t147,went_quiet,0,not_stated,False,8,True,Operations Analyst,False
+t148,soft_deferral,4,3_to_6_months,False,2,False,Head of Logistics,False
+t149,hard_no,0,not_stated,False,20,False,VP Engineering,False
+t150,not_sales,0,not_stated,True,24,False,Finance Business Partner,False
+t151,soft_deferral,1,not_stated,True,17,False,Head of Finance,True
+t152,not_sales,0,not_stated,True,16,False,unknown,False
+t153,went_quiet,0,not_stated,True,11,True,RevOps Lead,False
+t154,soft_deferral,2,6_to_12_months,False,3,False,Fleet Manager,False
+t155,hard_no,0,not_stated,True,6,False,Fleet Manager,False
+t156,hard_no,0,not_stated,True,18,False,Head of Logistics,False
+t157,not_sales,0,not_stated,False,21,False,unknown,False
+t158,soft_deferral,4,3_to_6_months,False,23,False,Director of IT,True
+t159,soft_deferral,3,3_to_6_months,False,6,False,Finance Business Partner,True
+t160,soft_deferral,1,not_stated,False,10,False,Senior Buyer,True
+t161,hard_no,0,not_stated,False,14,False,Director of Sales,False
+t162,soft_deferral,3,3_to_6_months,False,23,False,IT Manager,True
+t163,hard_no,0,not_stated,True,22,False,Head of Finance,False
+t164,went_quiet,0,not_stated,False,6,True,VP Engineering,False
+t165,hard_no,0,not_stated,True,19,False,Operations Analyst,False
+t166,went_quiet,0,not_stated,False,21,True,RevOps Lead,False
+t167,not_sales,0,not_stated,True,3,False,unknown,False
+t168,not_sales,0,not_stated,True,19,False,unknown,False
+t169,hard_no,0,not_stated,True,21,False,VP Operations,False
+t170,hard_no,0,not_stated,False,23,False,Head of Finance,False
+t171,soft_deferral,4,3_to_6_months,False,19,False,Director of Sales,True
+t172,went_quiet,0,not_stated,False,10,True,Finance Business Partner,False
+t173,soft_deferral,1,not_stated,True,15,False,Head of Finance,True
+t174,went_quiet,0,not_stated,False,5,True,Finance Business Partner,False
+t175,soft_deferral,3,within_3_months,False,19,False,Head of Finance,True
+t176,soft_deferral,1,not_stated,False,21,False,Head of Logistics,True
+t177,went_quiet,0,not_stated,False,8,True,Fleet Manager,False
+t178,hard_no,0,not_stated,True,20,False,IT Manager,False
+t179,hard_no,0,not_stated,True,16,False,IT Manager,False
+t180,hard_no,0,not_stated,True,21,False,Head of Finance,False
+t181,not_sales,0,not_stated,False,2,False,unknown,False
+t182,went_quiet,0,not_stated,True,15,True,Director of IT,False
+t183,hard_no,0,not_stated,True,8,False,IT Manager,False
+t184,went_quiet,0,not_stated,False,2,True,Director of Sales,False
+t185,not_sales,0,not_stated,True,7,False,Head of Logistics,False
+t186,soft_deferral,2,3_to_6_months,False,21,False,Operations Analyst,True
+t187,soft_deferral,4,3_to_6_months,False,10,False,VP Operations,True
+t188,not_sales,0,not_stated,False,17,False,unknown,False
+t189,went_quiet,0,not_stated,False,12,True,IT Manager,False
+t190,hard_no,0,not_stated,False,15,False,Senior Buyer,False
+t191,hard_no,0,not_stated,True,23,False,Customer Success Lead,False
+t192,hard_no,0,not_stated,True,15,False,Chief Operating Officer,False
+t193,hard_no,0,not_stated,False,14,False,Procurement Manager,False
+t194,soft_deferral,3,6_to_12_months,False,8,False,Senior Buyer,False
+t195,went_quiet,0,not_stated,False,10,True,Chief Operating Officer,False
+t196,went_quiet,0,not_stated,False,21,True,RevOps Lead,False
+t197,hard_no,0,not_stated,True,3,False,Senior Buyer,False
+t198,soft_deferral,2,3_to_6_months,False,14,False,Senior Buyer,True
+t199,went_quiet,0,not_stated,False,16,True,Procurement Manager,False
+t200,went_quiet,0,not_stated,True,11,True,Finance Business Partner,False
+t201,not_sales,0,not_stated,False,15,False,unknown,False
+t202,hard_no,0,not_stated,False,21,False,Procurement Manager,False
+t203,not_sales,0,not_stated,True,13,False,unknown,False
+t204,hard_no,0,not_stated,False,8,False,Head of Logistics,False
+t205,soft_deferral,4,6_to_12_months,False,13,False,Founder & CEO,True
+t206,went_quiet,0,not_stated,False,11,True,Chief Operating Officer,False
+t207,not_sales,0,not_stated,False,19,False,unknown,False
+t208,not_sales,0,not_stated,False,12,False,unknown,False
+t209,soft_deferral,2,within_3_months,False,8,False,Customer Success Lead,True
+t210,not_sales,0,not_stated,True,1,False,Senior Buyer,False
+t211,hard_no,0,not_stated,True,21,False,Director of IT,False
+t212,hard_no,0,not_stated,False,9,False,Director of IT,False
+t213,went_quiet,0,not_stated,False,10,True,Customer Success Lead,False
+t214,soft_deferral,2,6_to_12_months,False,18,False,VP Engineering,True
+t215,soft_deferral,1,not_stated,False,5,False,Chief Operating Officer,False
+t216,soft_deferral,1,not_stated,False,12,False,Operations Analyst,True
+t217,soft_deferral,2,3_to_6_months,False,21,False,RevOps Lead,True
+t218,not_sales,0,not_stated,True,6,False,unknown,False
+t219,went_quiet,0,not_stated,True,7,True,Customer Success Lead,False
+t220,not_sales,0,not_stated,True,6,False,unknown,False
+t221,went_quiet,0,not_stated,False,10,True,Senior Buyer,False
+t222,soft_deferral,3,6_to_12_months,False,10,False,RevOps Lead,False
+t223,soft_deferral,4,3_to_6_months,False,7,False,VP Engineering,True
+t224,went_quiet,0,not_stated,False,2,True,Head of Logistics,False
+t225,not_sales,0,not_stated,False,6,False,unknown,False
+t226,not_sales,0,not_stated,False,13,False,unknown,False
+t227,not_sales,0,not_stated,True,9,False,unknown,False
+t228,hard_no,0,not_stated,False,10,False,Director of Sales,False
+t229,hard_no,0,not_stated,True,17,False,Chief Operating Officer,False
+t230,soft_deferral,3,6_to_12_months,False,10,False,Senior Buyer,False
+t231,soft_deferral,2,3_to_6_months,False,19,False,Operations Analyst,True
+t232,went_quiet,0,not_stated,True,19,True,Head of Finance,False
+t233,hard_no,0,not_stated,False,4,False,Director of Sales,False
+t234,not_sales,0,not_stated,False,9,False,unknown,False
+t235,hard_no,0,not_stated,False,17,False,Director of Sales,False
+t236,soft_deferral,3,3_to_6_months,False,9,False,Senior Buyer,True
+t237,hard_no,0,not_stated,True,24,False,Director of Sales,False
+t238,went_quiet,0,not_stated,True,7,True,RevOps Lead,False
+t239,not_sales,0,not_stated,False,12,False,unknown,False
+t240,soft_deferral,3,3_to_6_months,False,5,False,Head of Logistics,False
+t241,not_sales,0,not_stated,False,24,False,unknown,False
+t242,soft_deferral,4,within_3_months,False,16,False,VP Operations,True
+t243,not_sales,0,not_stated,True,23,False,Operations Analyst,False
+t244,not_sales,0,not_stated,False,10,False,unknown,False
+t245,went_quiet,0,not_stated,False,3,True,Procurement Manager,False
+t246,soft_deferral,1,not_stated,False,11,False,VP Engineering,True
+t247,soft_deferral,4,6_to_12_months,False,10,False,Customer Success Lead,False
+t248,went_quiet,0,not_stated,False,3,True,IT Manager,False
+t249,went_quiet,0,not_stated,True,2,True,Procurement Manager,False
+t250,soft_deferral,2,within_3_months,False,4,False,IT Manager,True
+t251,not_sales,0,not_stated,True,20,False,Finance Business Partner,False
+t252,not_sales,0,not_stated,True,13,False,Director of Sales,False
+t253,went_quiet,0,not_stated,True,16,True,VP Operations,False
+t254,soft_deferral,3,3_to_6_months,True,21,False,IT Manager,True
+t255,hard_no,0,not_stated,False,7,False,Head of Logistics,False
+t256,not_sales,0,not_stated,False,19,False,unknown,False
+t257,not_sales,0,not_stated,False,18,False,unknown,False
+t258,went_quiet,0,not_stated,False,12,True,Fleet Manager,False
+t259,soft_deferral,4,within_3_months,False,17,False,Operations Analyst,True
+t260,hard_no,0,not_stated,False,15,False,IT Manager,False
+t261,soft_deferral,1,not_stated,True,11,False,Chief Operating Officer,True
+t262,not_sales,0,not_stated,True,24,False,Operations Analyst,False
+t263,went_quiet,0,not_stated,True,13,True,Head of Finance,False
+t264,not_sales,0,not_stated,True,8,False,Founder & CEO,False
+t265,hard_no,0,not_stated,False,23,False,Director of IT,False
+t266,soft_deferral,2,6_to_12_months,False,15,False,Senior Buyer,True
+t267,hard_no,0,not_stated,True,10,False,Operations Analyst,False
+t268,soft_deferral,3,6_to_12_months,False,22,False,Senior Buyer,True
+t269,not_sales,0,not_stated,False,24,False,unknown,False
+t270,went_quiet,0,not_stated,False,9,True,Head of Logistics,False
+t271,hard_no,0,not_stated,True,7,False,IT Manager,False
+t272,not_sales,0,not_stated,False,24,False,unknown,False
+t273,soft_deferral,4,6_to_12_months,False,6,False,Customer Success Lead,False
+t274,hard_no,0,not_stated,True,1,False,Operations Analyst,False
+t275,soft_deferral,2,within_3_months,False,8,False,RevOps Lead,True
+t276,went_quiet,0,not_stated,False,6,True,Customer Success Lead,False
+t277,soft_deferral,4,6_to_12_months,False,20,False,VP Engineering,True
+t278,hard_no,0,not_stated,False,21,False,Finance Business Partner,False
+t279,went_quiet,0,not_stated,False,11,True,VP Operations,False
+t280,soft_deferral,2,3_to_6_months,False,1,False,IT Manager,False
+t281,went_quiet,0,not_stated,True,17,True,VP Operations,False
+t282,not_sales,0,not_stated,True,15,False,Fleet Manager,False
+t283,hard_no,0,not_stated,False,8,False,Founder & CEO,False
+t284,soft_deferral,1,not_stated,False,15,False,VP Engineering,True
+t285,not_sales,0,not_stated,True,11,False,Founder & CEO,False
+t286,soft_deferral,3,within_3_months,False,2,False,Operations Analyst,False
+t287,soft_deferral,1,not_stated,False,8,False,Head of Logistics,True
+t288,went_quiet,0,not_stated,False,20,True,IT Manager,False
+t289,went_quiet,0,not_stated,True,18,True,Procurement Manager,False
+t290,hard_no,0,not_stated,True,17,False,IT Manager,False
+t291,not_sales,0,not_stated,True,21,False,Director of Sales,False
+t292,soft_deferral,2,3_to_6_months,False,13,False,Head of Finance,True
+t293,soft_deferral,2,6_to_12_months,True,14,False,VP Engineering,True
+t294,went_quiet,0,not_stated,True,21,True,IT Manager,False
+t295,not_sales,0,not_stated,True,17,False,unknown,False
+t296,hard_no,0,not_stated,True,22,False,Senior Buyer,False
+t297,hard_no,0,not_stated,True,9,False,Customer Success Lead,False
+t298,went_quiet,0,not_stated,False,15,True,Procurement Manager,False
+t299,went_quiet,0,not_stated,False,1,True,Senior Buyer,False

@@ -1,0 +1,17 @@
+# secrets
+.env
+
+# local environment and caches
+.venv/
+__pycache__/
+
+# third-party material kept locally for reference (TypeSafe's own docs)
+docs/
+llms.txt
+
+# newsletter working copies and one-off page-editing scripts
+dated-not-dead.before-*.html
+patch_page.py
+rewrite_page.py
+fill_results.py
+old-newsletter-*.html

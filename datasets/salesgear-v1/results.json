@@ -1,0 +1,418 @@
+{
+ "models": {
+  "jev": {
+   "model": "jev-1.13.0",
+   "n": 203,
+   "accuracy": 0.9507389162561576,
+   "near_miss_accuracy": 0.8823529411764706,
+   "deferral_precision": 0.9090909090909091,
+   "deferral_recall": 0.9836065573770492,
+   "precision_at_10": 0.9,
+   "precision_at_30": 0.9,
+   "timeframe_accuracy_on_deferrals": 0.9180327868852459,
+   "ece": 0.019901477832512376,
+   "reliability": [
+    {
+     "conf": 0.57,
+     "acc": 0.4,
+     "n": 5
+    },
+    {
+     "conf": 0.644,
+     "acc": 0.75,
+     "n": 8
+    },
+    {
+     "conf": 0.752,
+     "acc": 0.75,
+     "n": 4
+    },
+    {
+     "conf": 0.865,
+     "acc": 0.933,
+     "n": 15
+    },
+    {
+     "conf": 0.99,
+     "acc": 0.982,
+     "n": 171
+    }
+   ],
+   "confusion": {
+    "soft_deferral": {
+     "soft_deferral": 60,
+     "hard_no": 1,
+     "went_quiet": 0,
+     "not_sales": 0
+    },
+    "hard_no": {
+     "soft_deferral": 0,
+     "hard_no": 50,
+     "went_quiet": 0,
+     "not_sales": 0
+    },
+    "went_quiet": {
+     "soft_deferral": 3,
+     "hard_no": 0,
+     "went_quiet": 47,
+     "not_sales": 0
+    },
+    "not_sales": {
+     "soft_deferral": 3,
+     "hard_no": 0,
+     "went_quiet": 3,
+     "not_sales": 36
+    }
+   },
+   "cost_usd_run": 0.009056166000000001,
+   "cost_usd_per_10k": 0.44611655172413794,
+   "in_tokens": 215623,
+   "out_tokens": 40208,
+   "median_call_s": 0.346,
+   "wall_s_run": 9.71,
+   "workers": 8,
+   "wall_s_per_10k": 478.3251231527094,
+   "top10": [
+    [
+     "m007",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m011",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m016",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m021",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m026",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m036",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m041",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m050",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m059",
+     97,
+     "not_sales",
+     false
+    ],
+    [
+     "m065",
+     97,
+     "soft_deferral",
+     true
+    ]
+   ],
+   "scored": 203,
+   "of": 203,
+   "misses": [
+    {
+     "id": "m035",
+     "gold": "soft_deferral",
+     "pred": "hard_no",
+     "confidence": 0.54,
+     "near_miss": false,
+     "text": "Next quarter, ok? This one is spoken for."
+    },
+    {
+     "id": "m046",
+     "gold": "went_quiet",
+     "pred": "soft_deferral",
+     "confidence": 0.56,
+     "near_miss": true,
+     "text": "Sure, how about Tuesday at 2?"
+    },
+    {
+     "id": "m059",
+     "gold": "not_sales",
+     "pred": "soft_deferral",
+     "confidence": 0.97,
+     "near_miss": true,
+     "text": "Thanks for your email. I'm travelling for our annual conference until March 14 and will get back to you after that."
+    },
+    {
+     "id": "m094",
+     "gold": "not_sales",
+     "pred": "went_quiet",
+     "confidence": 1.0,
+     "near_miss": true,
+     "text": "Hi Alex, I came across your profile and think you'd be a great fit for a Senior Account Executive role at a fast-growing fintech. Open to a chat?"
+    },
+    {
+     "id": "m116",
+     "gold": "not_sales",
+     "pred": "soft_deferral",
+     "confidence": 0.62,
+     "near_miss": true,
+     "text": "Declined: Follow-up call. Note from organizer: \"Let's find another time.\""
+    },
+    {
+     "id": "m127",
+     "gold": "not_sales",
+     "pred": "soft_deferral",
+     "confidence": 0.6,
+     "near_miss": true,
+     "text": "I'm on parental leave until the new year and won't be checking email. I'll respond when I'm back."
+    },
+    {
+     "id": "m138",
+     "gold": "not_sales",
+     "pred": "went_quiet",
+     "confidence": 1.0,
+     "near_miss": true,
+     "text": "Following up on my last note about the Head of Sales role. Would next week work for a quick call?"
+    },
+    {
+     "id": "m151",
+     "gold": "went_quiet",
+     "pred": "soft_deferral",
+     "confidence": 0.89,
+     "near_miss": true,
+     "text": "Hi Anika, just checking in."
+    },
+    {
+     "id": "m156",
+     "gold": "went_quiet",
+     "pred": "soft_deferral",
+     "confidence": 0.72,
+     "near_miss": false,
+     "text": "Yes, I can hold it through October."
+    },
+    {
+     "id": "m189",
+     "gold": "not_sales",
+     "pred": "went_quiet",
+     "confidence": 0.65,
+     "near_miss": true,
+     "text": "Accepted: Intro call, Copperline Logistics and us."
+    }
+   ],
+   "refusals": 0
+  },
+  "llm": {
+   "model": "gemini-3.8-flash",
+   "n": 203,
+   "accuracy": 0.9802955665024631,
+   "near_miss_accuracy": 0.9411764705882353,
+   "deferral_precision": 0.9523809523809523,
+   "deferral_recall": 0.9836065573770492,
+   "precision_at_10": 0.9,
+   "precision_at_30": 0.9333333333333333,
+   "timeframe_accuracy_on_deferrals": 0.7704918032786885,
+   "ece": 0.022955665024630513,
+   "reliability": [
+    {
+     "conf": 0.65,
+     "acc": 0.0,
+     "n": 1
+    },
+    {
+     "conf": 0.8,
+     "acc": 1.0,
+     "n": 2
+    },
+    {
+     "conf": 0.86,
+     "acc": 0.7,
+     "n": 10
+    },
+    {
+     "conf": 0.989,
+     "acc": 1.0,
+     "n": 190
+    }
+   ],
+   "confusion": {
+    "soft_deferral": {
+     "soft_deferral": 60,
+     "hard_no": 1,
+     "went_quiet": 0,
+     "not_sales": 0
+    },
+    "hard_no": {
+     "soft_deferral": 0,
+     "hard_no": 50,
+     "went_quiet": 0,
+     "not_sales": 0
+    },
+    "went_quiet": {
+     "soft_deferral": 1,
+     "hard_no": 0,
+     "went_quiet": 49,
+     "not_sales": 0
+    },
+    "not_sales": {
+     "soft_deferral": 2,
+     "hard_no": 0,
+     "went_quiet": 0,
+     "not_sales": 40
+    }
+   },
+   "cost_usd_run": 0.25055325,
+   "cost_usd_per_10k": 12.342524630541872,
+   "in_tokens": 197991,
+   "out_tokens": 27216,
+   "median_call_s": 2.188,
+   "wall_s_run": 331.4000502512563,
+   "workers": 2,
+   "wall_s_per_10k": 16325.125628140704,
+   "top10": [
+    [
+     "m007",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m011",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m016",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m017",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m026",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m034",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m041",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m044",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m050",
+     97,
+     "soft_deferral",
+     true
+    ],
+    [
+     "m059",
+     97,
+     "not_sales",
+     false
+    ]
+   ],
+   "scored": 203,
+   "of": 203,
+   "misses": [
+    {
+     "id": "m024",
+     "gold": "went_quiet",
+     "pred": "soft_deferral",
+     "confidence": 0.85,
+     "near_miss": true,
+     "text": "Since your team is heads-down until the new year, I'll check back in January. In the meantime, here's a short case study."
+    },
+    {
+     "id": "m059",
+     "gold": "not_sales",
+     "pred": "soft_deferral",
+     "confidence": 0.85,
+     "near_miss": true,
+     "text": "Thanks for your email. I'm travelling for our annual conference until March 14 and will get back to you after that."
+    },
+    {
+     "id": "m102",
+     "gold": "soft_deferral",
+     "pred": "hard_no",
+     "confidence": 0.65,
+     "near_miss": true,
+     "text": "Maybe someday. Honestly it's not something we're looking at, but feel free to check back in a year or so."
+    },
+    {
+     "id": "m116",
+     "gold": "not_sales",
+     "pred": "soft_deferral",
+     "confidence": 0.85,
+     "near_miss": true,
+     "text": "Declined: Follow-up call. Note from organizer: \"Let's find another time.\""
+    }
+   ],
+   "refusals": 0
+  }
+ },
+ "slots": {
+  "DATASET_SIZE": "203",
+  "LABEL_SPLIT": "61 soft_deferral \u00b7 50 hard_no \u00b7 50 went_quiet \u00b7 42 not_sales",
+  "NEAR_MISSES": "68 near-misses",
+  "BASELINE_MODEL": "gemini-3.8-flash",
+  "DEFERRAL_PRECISION / DEFERRAL_RECALL": "0.91 / 0.98",
+  "PRECISION_AT_10": "9 / 10",
+  "ECE": "0.020",
+  "COST_JEV": "$0.45 per 10k threads",
+  "LATENCY_JEV": "0.35s per thread (median) \u00b7 8.0 min per 10k",
+  "JEV_MISSES": "3\u00d7 went_quiet read as soft_deferral (e.g. m046); 3\u00d7 not_sales read as soft_deferral (e.g. m059); 3\u00d7 not_sales read as went_quiet (e.g. m094)",
+  "COST_LLM": "$12.34 per 10k threads",
+  "LATENCY_LLM": "2.19s per thread (median) \u00b7 272.1 min per 10k"
+ },
+ "edits": {
+  "total": 0,
+  "after_run": []
+ },
+ "dataset": {
+  "threads": 203,
+  "labelled": 203,
+  "as_of": [
+   2026,
+   9
+  ]
+ },
+ "generated": "2026-09-30 16:36"
+}

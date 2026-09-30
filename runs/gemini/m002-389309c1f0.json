@@ -1,0 +1,1 @@
+{"pred": {"choice": "hard_no", "probs": {"soft_deferral": 0.0, "hard_no": 1.0, "went_quiet": 0.0, "not_sales": 0.0}, "timeframe": "not_stated", "trigger": 0.0, "seniority": 0.75, "named_trigger": 0.0}, "note": null, "model": "gemini-3.8-flash", "response_id": "aMy8aoGaA-2GjuMPhaS8yQM", "latency_s": 4.451, "finish": "STOP", "usage": {"input_tokens": 948, "output_tokens": 106}}

@@ -1,0 +1,137 @@
+{
+  "jev": {
+    "model": "jev-1.13.0",
+    "n": 300,
+    "accuracy": 0.92,
+    "near_miss_accuracy": 0.8495575221238938,
+    "deferral_precision": 0.8910891089108911,
+    "deferral_recall": 1.0,
+    "precision_at_10": 1.0,
+    "precision_at_30": 0.8,
+    "timeframe_accuracy_on_deferrals": 0.7444444444444445,
+    "ece": 0.04049999999999997,
+    "reliability": [
+      {
+        "conf": 0.574,
+        "acc": 0.636,
+        "n": 11
+      },
+      {
+        "conf": 0.651,
+        "acc": 0.933,
+        "n": 15
+      },
+      {
+        "conf": 0.767,
+        "acc": 0.76,
+        "n": 25
+      },
+      {
+        "conf": 0.848,
+        "acc": 0.862,
+        "n": 29
+      },
+      {
+        "conf": 0.989,
+        "acc": 0.959,
+        "n": 220
+      }
+    ],
+    "confusion": {
+      "soft_deferral": {
+        "soft_deferral": 90,
+        "hard_no": 0,
+        "went_quiet": 0,
+        "not_sales": 0
+      },
+      "hard_no": {
+        "soft_deferral": 1,
+        "hard_no": 74,
+        "went_quiet": 0,
+        "not_sales": 0
+      },
+      "went_quiet": {
+        "soft_deferral": 4,
+        "hard_no": 0,
+        "went_quiet": 71,
+        "not_sales": 0
+      },
+      "not_sales": {
+        "soft_deferral": 6,
+        "hard_no": 0,
+        "went_quiet": 13,
+        "not_sales": 41
+      }
+    },
+    "cost_usd_run": 0.013628874,
+    "cost_usd_per_10k": 0.45429579999999997,
+    "in_tokens": 324497,
+    "out_tokens": 59461,
+    "median_call_s": 0.321,
+    "wall_s_run": 12.44,
+    "workers": 8,
+    "wall_s_per_10k": 414.66666666666663,
+    "top10": [
+      [
+        "t026",
+        97,
+        "soft_deferral",
+        true
+      ],
+      [
+        "t073",
+        97,
+        "soft_deferral",
+        true
+      ],
+      [
+        "t092",
+        97,
+        "soft_deferral",
+        true
+      ],
+      [
+        "t158",
+        97,
+        "soft_deferral",
+        true
+      ],
+      [
+        "t171",
+        97,
+        "soft_deferral",
+        true
+      ],
+      [
+        "t187",
+        97,
+        "soft_deferral",
+        true
+      ],
+      [
+        "t205",
+        97,
+        "soft_deferral",
+        true
+      ],
+      [
+        "t223",
+        97,
+        "soft_deferral",
+        true
+      ],
+      [
+        "t242",
+        97,
+        "soft_deferral",
+        true
+      ],
+      [
+        "t277",
+        97,
+        "soft_deferral",
+        true
+      ]
+    ]
+  }
+}

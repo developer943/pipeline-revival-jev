@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "model": "jev-1.13.0",
+    "captured": "2026-09-30",
+    "input_tokens": 7282,
+    "cost_usd": 0.00030584400000000005
+  },
+  "threads": {
+    "sarah": {
+      "text": "Thanks for the demo. This looks strong, but we're mid-rollout on a new fleet-management system. Let's circle back once that's live — probably early next year — and revisit then.",
+      "choice": "soft_deferral",
+      "probs": {
+        "went_quiet": 0.0,
+        "soft_deferral": 1.0,
+        "not_sales": 0.0,
+        "hard_no": 0.0
+      },
+      "confidence": 1.0,
+      "noulTrigger": 0.98,
+      "noulQuiet": 0.18,
+      "timeframe": "6_to_12_months",
+      "sub": {
+        "trigger": 1.0,
+        "seniority": 1.0,
+        "ripeness": 1.0
+      },
+      "warmth": 97,
+      "latency_s": 0.371,
+      "input_tokens": 1050,
+      "playground": "https://console.typesafe.ai/playground#share/N4IgJg9gxgrgtgUwHYBcAqCAeKQC4AEIwAOkvvsSFBKgIZQoD6AThADYKUGUBqACvgDyABwTNaKAJY0AzpQA0pcpTa0ZTRDJm0A5gkYzkKLhRABBYc0lt8AJgAMtgKwKlpzdr1y8+ANpvyEjJyEMoAM1Y4E0oAZVpxAAt8QBQCfH4hUXEpWVdgkNMULGMfSjQE2iQAaxl8MIhmfBQEhHwwBDgIADp8MskatggIavx1ViQdeXwAIxgUfAB3BAByZha4STAAWlY2Adn8GnxafCQEedqOBBRNuArddqMRgE91du6AGSulmqhJZigONN6JUDkgoC0mhJvvg2JIAG4tVKWCBTWhTNhPfAIeIYk5FfBPbENVIVMD4VZwvqSOZNZCdSgBfAAXzcAF1SEyQJMQMi4MIUDIMNgfEQ3JQoBIEDp6k8TEF8pQUE9RNEqAkIJJwbkFSBJEhRjAGNJ9aqAMKqLSSMKYpp9VrYsnaDg1dq0ayNBKrWhkqaY+blGnNaYwQnMaEWubCCAyanGhZqelcxniqyFKy0OWM5QgGQQMJMNphMTiNiqsotGah-BR9RR05krLNBqQshtAF6hBgAhqSqdxoQckISkxuaqNOTWj5sRHMhDoyTGZgPRzKBPAEISb1VqSxOKPKhEDlZhgRhICBloOV6frnGYtuw+sEKDqwxHfDUPlXan1SbaDYnCA5mOMJqQnGRezJM8aQHKYWmoOgGE7SZ1UWBEGijWFClxeZ6jaMBdyzUxFlQRgAEcYEkK4LxaQxdjEaEPHuBZHhgJAKhkRZVjAABuD0KxDadTjQ-AdFoBE3xrWMaAI-dsyggxaGdVUADlALfJ0EB+Gg0O0bIkAIU55hkDgUDTGRJjnVB8D1SlCnMo5ZggbYEGEWFNMmPU0zYmwoM1TTE0ZFlgiZPc5NoRATxQKwdD0ZhM33RVlU4EoQDPGBSyTBLdX1KLDT07xuBAAARf9aWDKs2MQdTRF+ECoCxBErK3eCwCkshaT9MQWnmN0pHGUFpgQOpVkHYdY36gAKBBOh0bpjhkF5CjgESNX62EEQXGAlyuEZsVzJAJ3wBI-gQABKAB+bUDygVMxEkDMfHlfICmYGBksKsx3xoG6rg3d9migSo0UBSy5mamhWr06yakqzsrp1MJFMMFSBxatrNwaGhcThXQ3saSR1jWyRe3wJYx3og4GiWKCAPmJYGX3ILyBCsUcwQOjmEYVj2M4uHHuTEAlRVFK0oy0KDz1A0jRyFKAHU1D4mE1DmRi9Gs9qgyaL1HUeX1FdojgGlJGEhrmeZqXVfZjlWVzMQiCBlrKq9mEukA3BZ4JFWi2LGABeJqVlfmsqF97TBkahVnh0xJdy6WTRSgAJCBziwVzNWpaGFgDRXnZGN0yQ65iRp68adAG2DhpaCkqT6nRXfF7MbupO6HoIfxZNMVTbXGAgnYEhpRPEs9BzUQ4tykQmy5QAcS7mYao+zHhcYhAm9TLrGnkmWESbJyUw0p0madtGpyPiNN6cy57TE+iUOCQMB4mrO6IDALfiZaan8VP5hz4PpYysMgSIkSxJjmyaABBqRgF7XxOOFPsoMD5oz0m-Em81FrtHJOwPYYMGiLmXEcYQyIcZi0IpQT6sMyQILAUkf0yBrJzDtKnBAiFX4wnfqTb6EIgyAIWq8Zadp1p-SJLiU42AgHxAvoydkwVxaUEMEgaQqZA4ECetmEOqpw71GSg3aOOVXpxwKqYJO5x5GKMzn3UMmwYxtC+ghBhZAAAG8EUD0CYDsBADiwISRgP8cor42xUhoDcWgvYXZRxTM3dMJh25X0oAAVSqGeeYB0D402OJkfaRxAz8SeGvL6fIKiYgmscQo4V1ZTAgJgCcs5GoCjYeoU60DKAAEl77wg2DARStioqSBmNPBo1CIF4KopfZ6lAACydxYoH2RLAVYiAmphDqtOf0A4ZDlFEDUMqwgfHPjUPxOYkBNIATBsknOW1lxNOKidBgW4tzNG9AcMIb4wisTjlnAcyd9RvmGcUHRi8+CTFNJsDgCI2AY1qBAVibQ4pu33NI5msiQC0Fnp2RgE8hriEQPFHU6iUrPg1FqUZ2YY76PyqqYxtRH6TjTPgBxEZGCq30PIlADjWilUvP3EYMAYqaTmNXEca9zr4AAFIXJaMIT0+z+jsP-tws44j95bk-mI7+v9VhjnhBCAcZUOioCSBnHqNQWUyR1E3NM90cVjJANQvUjAADMjKaBNEMZQWWCAEDDBRbQTeHo7RqrEBC0RcwA2wv+aYR109GAADYnX6tdeYCp+xyhsGeccQkj8oUoAhTS6cxwKF4niJsNMy1QZXNjVGgAjLYONLrVTjOjGDNNiqjg9V9VuXNRsYQ0GmciAAVswuYMhDRJAVmgvhmDdhZquRANCjBaCMAzbCwqDaRotjfEug4swrnyXUJKMAKN8aTwPt65ulDanxhqDoLVSAGb5CZsyDkXJCC0GEJIHgYgYw0BFHCStz62YcBYQ2tobAZA+F8CAAdcIQWSnUCAVkTIgA"
+    },
+    "marcus": {
+      "text": "Appreciate the numbers. Realistically we can't move on anything new until after budget season. Ping me to revisit next quarter and we'll take a proper look.",
+      "choice": "soft_deferral",
+      "probs": {
+        "not_sales": 0.0,
+        "hard_no": 0.0,
+        "went_quiet": 0.0,
+        "soft_deferral": 1.0
+      },
+      "confidence": 1.0,
+      "noulTrigger": 0.97,
+      "noulQuiet": 0.31,
+      "timeframe": "within_3_months",
+      "sub": {
+        "trigger": 0.7975,
+        "seniority": 0.7525,
+        "ripeness": 1.0
+      },
+      "warmth": 89,
+      "latency_s": 0.31,
+      "input_tokens": 1047,
+      "playground": "https://console.typesafe.ai/playground#share/N4IgJg9gxgrgtgUwHYBcAqCAeKQC4AEIwAOkvvsSFBKgIZQoD6AThADYKUGUASCtYfBABm+AGIBLJLSRROIADSlylNrQDOTROvW0A5gkbrkKLhRAApGEgT4ATAAY7AVkpKy57boPqzAbWVyfBIPIPNhVjgzSgBZWmZYdXxAFAJ8PgEhUUlpWXl3MJUQFCxTPHMAQQAHSuYEKAlaYvwUAAtbJHgAIwRmdQA6fAAlfjYJTQkoWjY2AE98AHdbSaQAchR8OAgAN1safBkZ1qk9fBt5-GsUCTZ94WLmfE6YMAN14w0aAYAFY43bFAg+FqWzGEnWNmw+AAjjB4vd9khBIsVtNmrQANa2Wj4GoQSo9fBsCAQdF9SiBcgAX0CAF1SJTFIRcXBKih1BhsGUiIFKJNinoIMwZmYQmFKCgZvjolQWhAJnkKeYpJpmDAGBIaL4ypQAMJqHQSYRzI5JMD8QS6DhJBBwWjXZotWoZTpzeYtRoO2xPGY9FZJfXrSoQdRgjVkeYaMmKRW85hgnoNEWKwrqERMM3CHrMKbStBtR4wH0PIOaIM2QTZ1oE1oyfBmqCjcsEDSYwQAoEIEEh9Zqe4KW7w2udkz9p4vBDrKAzBsIfuCuuNBBR-IFSju5hgRhICC5-Pegkz+KzOt1RsIMAEKCy4z7fDUFkTsGC-u6CSCbfrbHCMH9lvn04QOs7bdHeNAoPQxRgP2sqLDsxbsPGx7zIKZpgMuybmIsqCMDCEgTrutjGNMvpJF4+i2Fh6zWDI6iLLUYAANyegWRanMODx6LQOy3iWoafG4GGUB+RhTAgWrcCAABygG3paYmgUgcG6FcNAEGc6gcCg9zqP2w6oPgUggsUOn7DAAIALS1JUoxif2Uj3NINwfvK-TkqE+DUh4lIrkJtCIJuKBxnoBjMEm7nipK8gSduMBsAJ4UgMqgVqipSDieYAAib7MfuDzSIgsn4vU35QPgenrPO1CInxZBVq6PQUXaVxICcezdMIgq2MCoLNScAAUS56AM2LqDMmg2vgAq-KMOyjs8rz4O8qZIL++AtBItQAJQAPzxWKVBxvciZlKKq5FKqUUVApUC1MU-ZXnU6K0J0HBlTs+mVTQYA1QZST5eee1ncIUzGNK0kKd9qVzg8NDHls+gwP8EhwNNEiYvgKKLswKxCA8KwfgB8wrG5YSeVSPkgERHDMIw1FpXRAMnTGRSRdKMVxdGCVJaq6qatKADqGjMQGfw6ORBm1fmrROhaJiPMa+ZUwSMiCBwdwLGCspmbeVnHhEEBwDlhY9LtICBN5PLnRIwU9IwDbxGCwpMwlEpStqlPULUgOFNzKVhulvAQOcWDWRMYK-Qs7pAXuxsPK+bZtPVtQLE1vxtQgHXJ913bHKbK6FDd8ZxrQ-iCVJgHrS1BBVixBKcdx24dh8ZDzlcKMtc0gIRuHmfe0ElAAGoI0j7etUgsz9qM6OY-cOPzvjMkmtCsLMLPfeFOUd6iYi8Q4gmEBQYSaO2PjJTL3Cvq4xjNdnPgPrxCs-bzJrAFvSY69Xf9gjlVfVWQ2Gk9j6yTGsUQ2rBpgQG1vOMcC1aDVFYPDDm+d+4gE3l-N++ln6tEjsgAy6wxhlUwEVSCgDp40DkMxW+o1xqGwITNWcZUjxzAhOse+2MSZBDpF5CmxgkAakOk7Agp1Ciu0upQdQnsFRczSslXmaVpQ8CDotZA-CI411yuZEMZoFLgQYBLfAAADKquimDgIQAY38SRsSVBgAkd0N56yghoOZW0mJmB52ZoXI6JcygBHcoUAAqkgdE255grSvgTaxPRlr7Gjl6Qsvx7yVAOPgPq2Jih+Qlp0CAmBfxkHKv6MYKBNof0oAASWqiCMAsIbjGLjE8AEDwsEtFfjA-CnMCjmDiNIEKV9cSwFqIgD6wgSoEjdICdQ7p8RJBrjYuxGh4nrEgPJAmQdJbxPHKUZBhQsq1AYPOecbQMgiFvMIawcjI6AjWVYgsmzSkgAHl8fsOpzIcB2GwaG+AOrWDNKFM27kuHk0trQbukFGBtwztmRAYV9qiOlFeOUcg+6UF9nIgOIBFHnGBg8WgdwCQGIDIwMiBgjAmAMXWbK6jY6LRgDbTQHYuyhhattfAVhxw4kdAswp08b4IHOGwueeMWHn1XpfWovYJDcXbDXTYqAWnhwjEkXhKB0IJS8QmHxQiy7NKkIwAAzESsCLR0X8wQAgdEViIwzH7EvGEF9mCfOFXa0VfztnmANQCRgAA2Q1cr0XlGydrd0bBRDYjYUIMynzcWDlOH5f8Nh4jmXuIbcq9yfWeoAIx2F9a0dFMRgwVVDXffgOKrVRrxTiwkNBem4gAFZ1DeGqFpQsRogImuAokZl7nbFtrQRgbDpT5uTjWMgYaS0Rq2WXYSmhFxgDBoCNuadS1NX-D-RVk1JXIA4VSc29JGQgDgRIAe0Swxci2Bm-dREG3nnzWaNg6hfEgHrVsV5i5NAgBpJSIAA"
+    },
+    "priya": {
+      "text": "It's interesting, but the timing isn't right for us this quarter. A lot going on. Maybe reach out again later.",
+      "choice": "soft_deferral",
+      "probs": {
+        "not_sales": 0.0,
+        "hard_no": 0.0,
+        "went_quiet": 0.0,
+        "soft_deferral": 1.0
+      },
+      "confidence": 1.0,
+      "noulTrigger": 0.04,
+      "noulQuiet": 0.19,
+      "timeframe": "not_stated",
+      "sub": {
+        "trigger": 0.255,
+        "seniority": 0.5075,
+        "ripeness": 0.65
+      },
+      "warmth": 46,
+      "latency_s": 0.31,
+      "input_tokens": 1036,
+      "playground": "https://console.typesafe.ai/playground#share/N4IgJg9gxgrgtgUwHYBcAqCAeKQC4AEIwAOkvvsSFBKgIZQoD6AThADYKUGUCSa+AWVpJaAcwTNKAGlLlKbWgGcmiRYrEJGi5Ci4UQAQRiiYy-ACYADOYCs02ftXrxivQG0H5EmXK-KAM1Y4PUoABWYASwBPWnxAFAJ8PkFhDUkQGR9ffRQsXTx9HhQAckV8CNQJBGVy0Sl8ACMYFHwUAAsEFoi4GrLFJCLmyNFW5v8IZnxTFtaI0oBHGFpmHOYAOnwDfDYIZtEIHpp1oSj6juYEelb8CCb8MVpyrdoV1cpPfABfBwBdUg-0wgAByCgJQigw2HyRAclCgzwQe2YUT03iylBQUUBnHysNa+yg2IyaJA5WUzBgDAiNFcOJAAGEFGoIv4otNZvgwBcwPh1BxSgg4A82NNzrRufVWQB3VrPaYdRpRCQlJ5mQEQRQRFBUsiSpSvdLvWGRFYRWgo95yECKCD+Jic-wSZi0NghEBodoNGCKiZq5RqpAIblOtoSabCDkIKBscqBghKADWgZaEHw5wAbrNNU8VnVaLbQ+GEGmdHVGmBxM0oFEowg6uMOfD9USsvoZcwwIwkBBXe75V7QzWlmxWZyozGwAQoHjtHd8NQ4FitShxnV1BFuV3mrF-Jrc4pExudsmGh1qHQGIG6njJUXQ2rozlh-hJeNOWAmxb9DfUIwFhEEHk3Buh62hsBwzDKk4GjPjokwiEgig3ucYAANxyp63r4AGxYTKItDFrOvqatqH6ZH4ICblozpVK6AByR6xLyVRzjQOHqFqNAEAGkqKBwKArIodS3qgZRIBmOSCXcTQQAAtOcgLRlUdTlCsIjCpuEQEoo+rvF8PgfM2lAiIgHYoEM4hpAQqLkRiWKul2MAugaZGUKSZkUhxCGugAIuu6EKqGxkdIxWJQMymn4MJzT1meYDETQcpSpUz4PFqSCiNcZCnGM5ypkWmZpRlAAUCCrKI6yMVEygCvgew9NGxaljA5YATyFzWkgub4DM5wAJQAPz2C5VDGhIprmmRlrudiQGbGeUDnDkdRTpG8a0PUHCRcWIkxTQcWeb0WG0CZQ0tvo-jOtodEprF8WddcEw0E+aZiDAHRat06VbBEib4EUCgrEUD1-ZuWEQJKRRvGRenkAZMJWggYESIwMDwYhlRgBNxK2TN+gOU5zaWm55KUtSroAOpKOhjLNFB4iiehbSity2giRK6GgeBdxINyHC2s+mp4rcsTyU+gQQHA-n9swg0gA4cM+Oi5nI1GSyasi+TWVNmK45QijUOcp3kcTHnajSQEABLg5FmAKZpWbstKsohhhoZrtyIZJblurEV9CXZeMZz5RqhWy4T+gLZqY1mvkHiTfo9FtDUBAuwFuH4R0XZ5UoCX1h9PTLilWY5UbxIAGqve9XQHEgw51NGv3-fCEHA0UoNJ-MizLEqpfkXN1E80s+BYpEEBgPXP0dG3uT4AsSyA63LvcfgipLEUdSSoLYNbToveWpsQXclFwO3Z5E+-ZV1WS6wYE3NFExlhWdyAsCEAvQTn6UAfx1Jsfm9tM+doZAHb8ltpGHI49vqNxoASdCy9FBVRyJLdkDVayRSHKyAM2AV4XAglDLIvx9KGQRkgKkxoNZWUNCAHGrp9aB17q5BC7lSZeVpFbSUbVSH1nZKnaWMkNSchYueZojwAAGZ4UD0CYDfBAoi9yERgMwKcSgOijkzDQGSgpEwywYSNKOkQY4EDjmdSgABVJA8YuySnuvWUGsQR4dTuM0XhUQejzkBMIVkRVYg5GOqJeoEBMC5jIFFUo0ZlC9T3gUHmEQMxgEWMKCRkRGjLgmP-K4WdH4ASiZQIQIgLLA1frAc4iAdr+B3ASNJeIeQyixKUF2gJFHKJnCkjkEBmKg3BmQXhLU8jh0tL5c4DB6z1naGKa4-hZz+FRiwwBKYumlFiFkvpn8QBl1CHUOkMkODFjYHWCYYxUacjSO8QhsNiG0B9hAxgH0ECBB-ljGyOtXRTnxISKhJsWHm30Ow-AF0Jh5hWPgURNNGB000KzFAoiOR+RcW7YwLhBjB19qIfq+AABSzV6aAlaE6bQYTJ5-SXggDhq8W71mntgue3cW7nABrE96KYXZwBoAArMupSiQtIsSSOJpDH4C1uRdJ5RGAAGYwWstaN8yg5MEAIHjIs3UUQ6gd1nl3HMwMsHNGpSsHJIBxXLkYAANglagKVroDABNuDKNgkzYhkuuE0fZdx8wAqOiZLCuCZIrEllFPVJrDUAEZzCmraNKkAAh1TRTtTgoelzaDKuBoCgsWwaAFNfgAK3ATyCkVwqaXyQamdg2wmh6rfsjWgjAyWukjblNo4Z7W4MdSs+ORkdhaEkRA66nRPoZXrPGqOR9trNA5bVBlSB8G+Bhp8P4AIQC0EBBEMuEgNQ0ChGmQNc7QLgMDJGzkbBFCxxAFmtM2z4TKBAN8D4QA"
+    },
+    "dan": {
+      "text": "Following up on my note below — did you get a chance to look at the proposal? Happy to jump on a quick call whenever works. (no reply)",
+      "choice": "went_quiet",
+      "probs": {
+        "soft_deferral": 0.0,
+        "not_sales": 0.0,
+        "hard_no": 0.0,
+        "went_quiet": 1.0
+      },
+      "confidence": 1.0,
+      "noulTrigger": 0.05,
+      "noulQuiet": 0.88,
+      "timeframe": "not_stated",
+      "sub": {
+        "trigger": 0.0025,
+        "seniority": 0.64,
+        "ripeness": 0.55
+      },
+      "warmth": 67,
+      "latency_s": 0.323,
+      "input_tokens": 1038,
+      "playground": "https://console.typesafe.ai/playground#share/N4IgJg9gxgrgtgUwHYBcAqCAeKQC4AEIwAOkvvsSFBKgIZQoD6AThADYKUGUBKCAbgHkADgGd8AGQS0wlADSlylNrVFNEo0bQDmCRqOQouFEIIYQARgmb4ATAAZbAVnmKTGrbtHGA2m-IkZOTBlABmrHDGlAZsHDYAFIgAlK5BwSYoWEZ4JgBi7GwQAO4Alkja+DDC+DT4cACe+EgQmfhWhUX4gCgE+GAlYPj1EDD4uij4tPhQABa0SFAI+CgQ+IUQANYT4yjTi8KswhBabAD8+AAStMLCjcv4AFbw1bWTAI4wJVCbULSx+EW7JACaz-CDMdaiAB0lH8+AAvm4ALqkOEgOSEfYQODCFCiDDYHJENyUH6ZbRg+rGQLpSgoerCTg5EnTCCfRkKNImMpqZgwBglGjeJkgADCKk0JVCt2mJXEYGkA2OCHECDgtBKbCW02YCrajQBtG2uzaMHq1gA5OJxeNDqISigBWQiqpoWjYSTmPbrCVaFTYUoQKIIKEmPLQtZmL8oiA0MaLKaQbaUIcgQNIzsQTs5r0EFA2GUEGACKp1oWlisdfxZfbVobrOjaCGQdngah0fGwGMpvU8wh0WDenXXRz0gHZswwIxmtHY4t42abL3aMw2I15XmC0WpiyDBMpliGQ7lsx0Vp+k0WnvQvaG6JSwNmtsVlZ93QGIX0SyisCbId85lV1BCdC2Hf0TG-VBGHeEoEGybgY2NGI4ktOplU8RYIPGGAkDmURvx1MAAG4tTnBMbCBfgQW0WhKL3W17UdUDOQDR99F+ZVowAOUvSYlXEagkEo5gtAdGgCCBIpRA4FBMmE9FW3GMoq0yUQGxgZYAFodWEfNlXRMpZJwzVHzZKEYU5BEgjhEcTBwxBJxQT1tF0Zg-U5Wl6UZeDmhgNhUhpEBuUcvlRKQIV4IAEXPDMTQXJpaEQPdRAZKBJU+fAFJqRcaD6UKSP1awMPVB1yhqMgrFCMFFkrasSoqeIEEhbRISS+o1FVUZWVK-NKPbGBO1g-ADFUGgG3wGUdSSE5-JCKhPVkn03NHDJeS8kwAEFXygHVMnRGZc3WWgLA4DLKNQLLX1yx18FleL7JmgLQl+AwuJWASrtGi6aEA-gdBgRYHTgMoKnzUt8HNFRZPNC7zUfC8inNcz0ks8hrOJQMEFiaxGGw3D8MLJbZrpBlox8vy3XcwKwuC-lBWjAB1VQSNrNRUM0HRFjKZmdh1GQhsMPVmaQ5skAGDgQ3+e0WXUvdtMA8IsWZ+drGmkA3DRoJaSclzGDzZd7UpHJqSJzzo1EagdQerlqd5Wmwujc5igyzAdM+GtboNI1SLis8BgzAqdX+YrgbKtoEEqwOartOrVZsgNtq9T1fRyPxmJMbidmBggYuVmxqNo5p8F5oMyAHQGQ7uZ0awjq2AwANT+gGSiB0rvvqdFQcWCG62YaGB1hy9M-Ed5lyh2uNqmdjReXfAGU9CAwA7kowdhrJ8BH5goZhmKJMGaRe-RUodgvU7DHHyhNrsstMoHd6GM+zvWvauAi4KYZxgHDsuyuTFfvJuPZqXwStfM64wj7TH+ICG6ikVQu1zJkReqxl5dxoAsZmu9RBtUyC-W6PU+wZWXIBIE2A97LkRmrTkyIrI2WiMgAU81DYEGNgGYma1ogW3ZO6KmPIQqOnCiYR2nQDBIHoTdcQOcyIaTtPKV8KB6CKTIAAAwEnIhgLB2AIEUbeOiMBmAzFUIsdc1YaAaTVKWZgscuEJwWsnAgqdlqUAAKpIHWM0IoSB+zkR4rPawJcthK1NCHag2I5iNHiJMTICUbpIAsBATADYyAKStLKFAKQKYOJAAASVFiUKsYAYC-FkZ6eMx5JbH0Ll-WC58QAAFk5gcxsAOTEsAdSIHOsGa8CwbAAhWKIWYDJxHGmELo-Ru4Sm9AgMqC8H93EBIGtkABAYoo6nMI0mwuw+bBivNhO2kCVjFDCnuSpCywKUDrgABXRCKDSHBKJsE8fgSq2F5SuQoekKhqMaEgFoFXBBjBAbh0jIgQmLDTbChmKyBYVtKBBVtqFfhlBBGPJno2WS+BFHWkYB4Dm+hDCKN6NFOMZEhowGcsqcYUcGLlDOAAKX6roWe2oDHJJXjvBAnQzRkJhsQ8YG8t46khrkgGKwYpwBoMfGszpxDCJQExAK1jvS2PwMw2a4CyiMAAMxYvFdMBFIB6YIAQBCCYzp25aluny+sF0eXrwKZvaw1StXLEYAANm1agXV0Z1qxJlrMNgoQ9ycsaepB5qLmx3TLECZcGlZIvwUtUt1zqACMth3U7D1TUo4H8A2TCDSa2gZqBxhpsJMQo5REysHuPAklMwJjiF4lgjqrBYjv2qRAISjBaCMCDdGTNgcsxkFzfvGo6lqmsTUHWWQwpuJLGbiHItvyQECylaMIVSAkbBBRvCFEaJCBXBKHXXxjpCT8CTbujGHB3xgEzfKNgogU4gCrfwG5dY1AgERHCIAA"
+    },
+    "lena": {
+      "text": "We're closing out the year and can't take anything on right now. Reach out in the new year and we can pick this up.",
+      "choice": "soft_deferral",
+      "probs": {
+        "hard_no": 0.0,
+        "went_quiet": 0.0,
+        "not_sales": 0.0,
+        "soft_deferral": 1.0
+      },
+      "confidence": 1.0,
+      "noulTrigger": 0.16,
+      "noulQuiet": 0.32,
+      "timeframe": "within_3_months",
+      "sub": {
+        "trigger": 0.5025,
+        "seniority": 0.22,
+        "ripeness": 1.0
+      },
+      "warmth": 62,
+      "latency_s": 0.32,
+      "input_tokens": 1040,
+      "playground": "https://console.typesafe.ai/playground#share/N4IgJg9gxgrgtgUwHYBcAqCAeKQC4AEIwAOkvvsSFBKgIZQoD6AThADYKUGUAKrszBIlSUANKXKU2tAM5NEMmbQDmCRjOQouFEABEEUIQCMEzfACYADOYCsYiToVLVM7QG0H5EmXK-KAM1Y4bUoAGWRafEAUAnw+aBhBYS0QcR9fHRQsZO4QAHUEAHJBfCg2CBkASyRlfAgYFHwUAAsEfABPBFozWiQwEp6ChpRaAGtWnrbmqpqafGYK5SaGpAgAdwA6fAAlTqgm2vr8KsaW-CQEVfbO7t78VdaoHvwABwqoEZOKmXwYZ-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"
+    },
+    "omar": {
+      "text": "We actually went with a competitor last month — signed with them already. Not a fit for us at this point, but thanks for the time.",
+      "choice": "hard_no",
+      "probs": {
+        "not_sales": 0.0,
+        "went_quiet": 0.0,
+        "hard_no": 1.0,
+        "soft_deferral": 0.0
+      },
+      "confidence": 1.0,
+      "noulTrigger": 0.04,
+      "noulQuiet": 0.21,
+      "timeframe": "not_stated",
+      "sub": {
+        "trigger": 0.01,
+        "seniority": 0.75,
+        "ripeness": 0.9
+      },
+      "warmth": 6,
+      "latency_s": 0.346,
+      "input_tokens": 1041,
+      "playground": "https://console.typesafe.ai/playground#share/N4IgJg9gxgrgtgUwHYBcAqCAeKQC4AEIwAOkvvsSFBKgIZQoD6AThADYKUGUAiAlswQMIzfBABm+AMq0OAZ0oAaUuUptacpojlzaAcwSM5yFFwogAsrWZQAFvgBMABgcBWJSvPbdBhXnwA2p7kJGTk4ZTirHBmlADycNb4gCgE+PyCwqIS0rIIfsph4eYoWKb+lADqCPj0KDCybACe+ADuJq18KPa0+NRwAA4IKJ0i+Oqa+HA0XSn4cnx6SAhgHTNdCHA1bIK0YI0AdPgAchAoNfjinRejMHI1Z118d-0QfKiK+ABGMA+2tEgAazu4lG63ww0Q+0owXwAF9PABdUiwkAfED9aL9FByDDYfxETyUKC0Ep6ESNMyhIqUFCNQaxKi2V5QTiomGUN6aZgwBh8Gh+bggADC43m4majzuYAQuzmuTuG1ofDY4NsOxWn2aLT+v2q30aCGYAHI7uMzi95sMaK0NFC2YVzFBmJ1DXxaJSYaoQHIJExpeJDcxZAy0LY9TADaILSgXksVkH1qIuv98NKoGw3ssCBoActwRB8IIAG5PK7qErMD60cQVmpkBBFkwfb5gAxnKCNdMID6jMAkhB2gpFL1-ZhgRhICAhsNfCOG3ocaxNVNCDNxgh2CDGc59QbDFAiD66PgrSdnHqXFBVuS50+nfNfarUOgMZYfJltRtR9gu5ctETSmAg6euYbSoIwACOMB8EM07VMYbAcMadzePo1RgWcMBIP8chtIIYAANyquGkb4EsX74HotCNucFqdHySDAQ6XpnkY8oMic55yvIvQ0F+uhWkgBBLC0cgcCgFZyB8DbtG8JYlFJNQ-BAAC0gj9BmeQfG8FbYSqZ58Cych2jC8JhLCQ7mNhiDjigzp6AYzAeg6NJ0qygqTjAbAeC5ICcnZPKCQK5j8CsYL6vO1nVD0ciDFAfCXFA+AyagYiiM+YD0da6xaoa6FKsMSB6GIZCfAgIKCIWDaloVxUABQDnohwxY0mgbJRrxFWMfCNs2MCtkMcwyj6SBVvgtgCAgACUAD8PnUlQzoVm6znDsU3LueYACCvFIE6Qzdr0YZQACtCfBwyWNqlowZVlZBPGRtA2fNw6RLIxgcQWt2CT2WRIMuRb6DA1QQm8xUZrm+BGuWhpGmlUNnmREAtEa0IOmZ5AWYS3oIIhhqMFhOF4csq0RCAtL0uUICed59oLf53K8vyDIVBoxFjBoZyoQY+BvOzXTqkNqWauzCFIXWKwcDWqxMj85zqcuUQQJs4Vzswc0gJ4WNhDS9mOYw6bWJ0FL+FSZMU5tlByNQggvV6DOBQxwWUAAEsjyWYBphlXA92okuzEWiMeYVhrllUtAVYMlY+FXVMWNVgxrllek6LrOu6-hBMx5icRNRUEKrpFUTRk5VRo1qgnwcBRweNpXBVdtkwAakDINV1HNBNB8EPVND-bGvDRqI5K+BQdYFao3Tr0gDtxIcEgfZRq6EBgN3fCQ0PpSj-UzAT4PYIifgBrWEaHwtJ09ilylZTJ2TO1RSs1-w99DFr5DLVtZsrCIRAcujC2bYaj9AxBAQGtNb5envk9PMT9z4zG1MgXmZwHpYDiiUVe3UN40BZOzQ+chWolE2A9DMvVkpLmaEsbAR8ZTGjRkUJE5lLJW2QHyJaJsCBmy9BbBk1sRCslvhyJAXJHbMypm7FoQtWG8zuIXQ0Kl5jSl2igWovMyAAANnzKIYCwdgCA1HXlojAGwfxtxplLDQFSiRczq0bkSJaroM4ECzmtSgABVQEk4WijXhojHogxmAjXuAHCMUddz-GaHVHoJQnqqM+BATAVZ6xXWxN1TQU1G5egAJILx6ieeoKpNHOm+AeUQcDL4FgAbBKeC0rDYUcvDEBsBBCIGuuIRK85tQFjkH8QYMiZz9CMXYDQ4YziQDyEjM4yMyCqwGjfECvBJqZHhmGWU2QLxYSZmQTpYgvF3B6JUuZ2dKBNwAAofCFCpDgjY2C-WuFhaUTlNYOgYZjJhIBaARxdLZKu5UgyIFJlwtyDJNyGX4eyPyQiAqbOdiAcRFwkjVlrGos0jBuaGGMKgNRqYTzBNInIGADk8hnHjpaRO+AABS-Ueb9DVMM0069e4HwQBI4+A9RibyoWPXesMqrlh6iDAsYIpioHsFcCOdwMUoCYgtVOy1HH4E4WTMpbxGAAGZUXTFsDCqoCAgQ1Ajo0D4I8uUVluZQs4JrDQZPMOqg8jAABsGqRUwq2nEuWfw2CSB6KysQPxbmIvnD0B+ZEaEqQrJsa+1rKCOrtQARgcE6roMKLBbkmV66hCKDX+prIGsYNB6kgIAFZCDOPiuwNQ9lzAIe1b+bBf6HJcSAUB+NaCMFZQyFNlVkxkG9TQ31Dbp6sU0P2MAn1wTty6qMD5BUYHJJtHcPQ-KkB0PCBjOEyJUSEFoP0PgTdDTzBoPiIssbN04w4K+MAKbpRsDkJnEAxaiyXP7JoEACJYRAA"
+    },
+    "noise": {
+      "text": "You're invited to our Q4 webinar on logistics automation. Register here. Out of office replies will be ignored.",
+      "choice": "not_sales",
+      "probs": {
+        "soft_deferral": 0.0,
+        "not_sales": 0.97,
+        "went_quiet": 0.03,
+        "hard_no": 0.0
+      },
+      "confidence": 0.97,
+      "noulTrigger": 0.04,
+      "noulQuiet": 0.86,
+      "timeframe": "not_stated",
+      "sub": {
+        "trigger": 0.0025,
+        "seniority": 0.0,
+        "ripeness": 0.6
+      },
+      "warmth": 1,
+      "latency_s": 0.323,
+      "input_tokens": 1030,
+      "playground": "https://console.typesafe.ai/playground#share/N4IgJg9gxgrgtgUwHYBcAqCAeKQC4AEIwAOkvvsSFBKgIZQoD6AThADYKUGUCiAbshQBnfCgS04lADSlylNrSFNEQobQDmCRkMFcKIAMoIADmLgAjBM3wAmAAw2ArNNn6VazUL0BtV+RJk5EGUAGasknj6-IIiYhIugUH6Yth6lACaEDAA5MwI+ACWSHwFYmCiEPhZ1gCKACz4AO4I5kW01jT4bBDqBUoFUCK0MCgQcLQoBTQAdPgASgi9Slb4ABZWCLMA8iNVIXshA-l5xmwFCCKNBWxs+JaF6kgQeWDTlH74AL6uALqknyApIRjOFTEIMNhIkRXJQoBNFs8AJ56AJJSgoRHGTiRWGrCBHBJokBFJTMGAMKZILw4kAAYQUqgKIURolWfXwYHE5TUHBECHG11ZeVo5XMLMaqwmrPy5hgiKs2REDJQ+GMECEpUpTUUb0BH1hzFKVgKtBRHzkICEEBCTE5ISszFobDSIDQ6zucpWaqUaqQCHKjpQ62sQdoZE5UDOfrABEUAGt-RV8HkShqVQoxMwgbQbSsw-gEAJUEDZWBNCqoIjIwggc8OfDdTJEsEQJLmGBGE8XW6ZZ7rNX2mwWRGo-6CFA8Tp8LR8NQ4FjJqMs-g1AVyk8VTPDihs0IE+uICrRnd8tQ6Ax-UC8c0BNY1WcxEOms9Oa9CUl9M1UIwAI4wc4oN27o6DcCoiO4Gj5F+KowEgYZCM0LwANzSh68rWH6t74OotACNOqrqpqMzvkSG7aE6FwugAcoe+E8hcs40LeaiTDQBB+o0QgcCgmZCEChaCIUxRGnx04jBAAC0JxnBcQJFJmcG3BuRxCLqHzfIEnxNhacGIB2KCGuomjMGazbopi2LcCATwwM6epmcSVIGeSrFUi6AAia6obK6H4Lp+QzkIWJQEyAwFkWKp1meYBEWQQYIOKGzapqSDqFUZCWCEzzHIWfQpWlAAUmzqLMgWIsscDYfiqVdAUAgljAZYICqOiKDQ2ZrAUeQAJQAPwkfoUCGpmJqmR+yRkpZ+gAIKMUgQ3NTWs7rFAca0OYHDhYJUU0DFrmFCI-lgANFohE6OjUZU0WxbWHRIE+fAaDA+STHARRpWcCb4NkGYKlU1jZBufkQI02TvM2GnkFpMKWggoHMIwsHwYh-pjS2GJYi6Nl2dpLYks5FI0NSVkAOqKKhyr4BBmhCahQbCtygliqhIEcNYYblBwNpNKUeK7DO0ksmEYzeX2-UgK40OBOihnGYwkbtKUyKRKi6MWS6QjUHkA2UPjZKE25NIABIgwWmCnAMpQHU0kpHu6PkrKu5TxYleTJZMNWdJl2XJrlabveLuMWkNRqGqakS+M2Fo0UG70EPFaErDheFPL7bVkHWr3vUmjS0FbWUmfZ42UAAak9L0FG9nv3YiQKffkP3wsw2T-d9QOxyIf7tJmYNFx+lCzXCHBIGA7SqsaEBgHXBRfYDWAql3zA9632QJxx+Dyu02RAlcQbA1tqAnTNfkSImAmoK312udPX1lRVybsN0ux1qW5bTsYIIQI9OPmsfR0HyqXeqwbbIEKCqdkWBgplBvg3GgUAXrunXkIcqZhrZnHqgWQcLI-TYA3uIZu4Mkh-E0rjSgOgkBTGGsrAgqsLQYymmQrW2Ig76D1i5SkxN9Am0aCuZAlDrYJwdswCSGpORzRQPQcBZAAAGZ4JEMBYOwBA0jdz4WMDAZgE5FD5AjHlGgElxgJmYIHfUVBhrGnDgQSOxcQAAFUkBxieI0JAt1gabnHswK0ZApSCLlNnOcxgwwsgKjOOIlUijmAgJgbMZBz7CFqkobqR9KAAEkR51TXDAJ04jDSyiXDzPeqdX7NWSSAAAsmGSCHQ7ysFgHkRAF9rSHHgdYCUlQhCSixLEd06jNGSinHkjkEAGJAxBnFe2jVyylM8nkBgdY6zrBFHsfCIRYIGxtpUMZQwPRNUAn3IkJcAAKQJaQSQ4AINgrisqwU5IXD4xCoakJALQXORp9KVwQGEU+aM6HqxpBOfE8CdaOVJOwomLpuH4DOuzXM1hpHKkYNTLQ5CUDSI5F5XxvkhAwCMhcFUKY8oe3UL1fAAApSZ+RjCrEdDoJUM8G5rwQDwzezcV44IXlkpef08gZjqi9SoCc4A0D3lbXOIgUWNlMSHEalj8C0JbEAoojAADMiLhWrE4ZQEmCAEBxiGLnWurJ2SL0zK49l+ATVWFKaq0YjAABsarUAapdNNSJuxJRsH2DOFlVQRiuJzJmfC-8-TtAkpmSqcTSkOttQARhsI6oMmrynqkil6vBY8Xm0ENXWANeYug0GMqqVgAArBADAVzkmAeTO+qDWA3CyHslhFov5WEYLQRgLKXRlJ9qGbx6aOgjFKWRJQ8Jjo0hoqISu2cc2vLKAA7UIhehFkIUESGXx-iAkILQYwBQS5WA1DQKEfAY2bthhwC8YBu2cjYEICOIBS18DOfCJQIAfifCAA"
+    }
+  }
+}

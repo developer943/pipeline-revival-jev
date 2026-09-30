@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reopen Inbox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F5F9;--raise:#FBFBFD;--ink:#14161F;--ink-2:#565B6E;--line:#DADDE7;--line-2:#C7CBD8;
+    --blue:#2B39D6;--blue-deep:#1A2496;--blue-wash:#E7E9FB;--on-blue:#fff;
+    --ember:#C4611A;--ember-bright:#E07E2E;--ember-wash:#F7E9DA;
+    --good:#1F7A4A;--good-wash:#E2F3EA;--bad:#B3261E;--bad-wash:#FBE7E5;
+    --night:#0D1020;--night-ink:#EDEEF6;--night-2:#9CA2BC;
+    --sans:"Archivo",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--serif:"Newsreader",Georgia,serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B0D14;--raise:#12151F;--ink:#ECEDF5;--ink-2:#9AA0B4;--line:#242838;--line-2:#31364A;
+      --blue:#7A87FF;--blue-deep:#AEB6FF;--blue-wash:#191d3a;--on-blue:#0B0D14;
+      --ember:#EDA062;--ember-bright:#F0954A;--ember-wash:#2a2015;
+      --good:#6FD39B;--good-wash:#12291d;--bad:#FF8A80;--bad-wash:#2d1513;--night:#05060C;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B0D14;--raise:#12151F;--ink:#ECEDF5;--ink-2:#9AA0B4;--line:#242838;--line-2:#31364A;
+    --blue:#7A87FF;--blue-deep:#AEB6FF;--blue-wash:#191d3a;--on-blue:#0B0D14;
+    --ember:#EDA062;--ember-bright:#F0954A;--ember-wash:#2a2015;
+    --good:#6FD39B;--good-wash:#12291d;--bad:#FF8A80;--bad-wash:#2d1513;--night:#05060C;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{background:var(--paper);color:var(--ink);font:15px/1.5 var(--sans);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+  button,input,select,textarea{font:inherit;color:inherit}
+  button{cursor:pointer}
+  :focus-visible{outline:2px solid var(--ember-bright);outline-offset:2px}
+
+  /* top bar */
+  .top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--raise)}
+  .brand{font-weight:800;font-size:15px;display:flex;align-items:center;gap:9px;white-space:nowrap}
+  .by{font-size:12.5px;font-weight:700;color:var(--ink-2);text-decoration:none;white-space:nowrap}
+  .by:hover{color:var(--blue)}
+  .brand i{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--ember-bright))}
+  .ds{font:12px var(--mono);color:var(--ink-2)}
+  .spacer{flex:1}
+  .btn{border:1px solid var(--line-2);background:var(--paper);border-radius:9px;padding:7px 13px;font-weight:700;font-size:13px}
+  .btn:hover:not(:disabled){border-color:var(--blue);color:var(--blue-deep)}
+  .btn.primary{background:var(--blue);border-color:var(--blue);color:var(--on-blue)}
+  .btn.primary:hover:not(:disabled){background:var(--blue-deep);color:var(--on-blue)}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .prog{display:flex;align-items:center;gap:10px;font:12px var(--mono);color:var(--ink-2);min-width:0}
+  .bar{width:140px;height:7px;border-radius:4px;background:var(--line);overflow:hidden}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--ember-bright));transition:width .3s}
+
+  .tabs{display:flex;gap:4px;padding:0 20px;border-bottom:1px solid var(--line);background:var(--raise);overflow-x:auto}
+  .tab{border:0;background:none;padding:11px 14px;font-weight:700;font-size:13.5px;color:var(--ink-2);border-bottom:2px solid transparent;white-space:nowrap}
+  .tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--blue)}
+  .alerts{padding:0 20px}
+  .alert{margin:12px 0 0;border:1px dashed var(--ember-bright);background:var(--ember-wash);border-radius:10px;padding:10px 14px;font-size:13.5px}
+  .alert b{color:var(--ember)}
+  .alert ul{margin:6px 0 0;padding-left:18px;font:12px/1.55 var(--mono)}
+
+  main{flex:1;min-height:0;display:flex}
+  .pane{flex:1;min-height:0;display:none}
+  .pane.on{display:flex}
+  .scroll{overflow:auto;flex:1;min-height:0}
+  .page{max-width:1080px;margin:0 auto;padding:24px 20px 60px}
+  h2{font-size:22px;font-weight:800;letter-spacing:-.01em;margin:0 0 6px}
+  .sub{color:var(--ink-2);margin:0 0 18px;font-size:14px}
+  .muted{color:var(--ink-2)}
+  .mono{font-family:var(--mono)}
+
+  /* inbox */
+  .inbox{display:grid;grid-template-columns:minmax(300px,420px) 1fr;grid-template-rows:minmax(0,1fr);flex:1;min-height:0}
+  .list{border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;padding:12px;border-bottom:1px solid var(--line)}
+  .filters input,.filters select{border:1px solid var(--line-2);background:var(--raise);border-radius:8px;padding:6px 9px;font-size:13px}
+  .filters input{flex:1;min-width:120px}
+  .count{font:11.5px var(--mono);color:var(--ink-2);padding:8px 14px;border-bottom:1px solid var(--line)}
+  .rows{overflow:auto;flex:1}
+  .row{display:grid;grid-template-columns:10px 1fr auto;gap:10px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--line);cursor:pointer;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-top:0}
+  .row:hover{background:color-mix(in srgb,var(--blue-wash) 45%,transparent)}
+  .row.sel{background:var(--blue-wash)}
+  .dot{width:9px;height:9px;border-radius:50%;margin-top:6px;background:var(--line-2)}
+  .row .who{font-weight:700;font-size:13.5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .row .snip{font:14px/1.4 var(--serif);color:var(--ink-2);margin-top:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .row .dt{font:11px var(--mono);color:var(--ink-2);text-align:right;white-space:nowrap}
+  .row .w{font:700 13px var(--mono);display:block;margin-top:3px;color:var(--ink)}
+  .chip{font:700 10px var(--mono);padding:2px 7px;border-radius:5px;white-space:nowrap}
+  .c-soft_deferral{background:var(--ember-wash);color:var(--ember)}
+  .c-went_quiet{background:var(--blue-wash);color:var(--blue-deep)}
+  .c-hard_no,.c-not_sales,.c-refused{background:color-mix(in srgb,var(--ink) 9%,transparent);color:var(--ink-2)}
+  .mark{font:700 11px var(--mono)}
+  .ok{color:var(--good)} .no{color:var(--bad)}
+
+  .detail{overflow:auto;min-height:0}
+  .detail .page{max-width:900px}
+  .empty{color:var(--ink-2);padding:60px 20px;text-align:center}
+  .meta{display:flex;gap:14px;flex-wrap:wrap;font:12px var(--mono);color:var(--ink-2);margin:0 0 16px}
+  .msgs{display:grid;gap:10px;margin:0 0 22px}
+  .msg{border:1px solid var(--line);background:var(--raise);border-radius:12px;padding:12px 15px}
+  .msg.me{border-color:color-mix(in srgb,var(--blue) 35%,var(--line));background:color-mix(in srgb,var(--blue-wash) 45%,var(--raise))}
+  .msg .from{font:700 11.5px var(--mono);color:var(--ink-2);margin:0 0 5px}
+  .msg .tx{font:16px/1.5 var(--serif);white-space:pre-wrap;margin:0}
+  .answers{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{border:1px solid var(--line);background:var(--raise);border-radius:14px;padding:16px 18px}
+  .card h3{font-size:12.5px;font-weight:800;color:var(--ink-2);margin:0 0 12px;display:flex;justify-content:space-between;align-items:center;gap:8px;letter-spacing:.02em}
+  .card h3 .btn{padding:4px 10px;font-size:12px}
+  .cat{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap}
+  .cat .chip{font-size:12px;padding:4px 10px}
+  .dist{display:grid;gap:5px;margin:0 0 14px}
+  .dr{display:grid;grid-template-columns:100px 1fr 38px;gap:8px;align-items:center;font:11px var(--mono);color:var(--ink-2)}
+  .dr .b{height:7px;border-radius:4px;background:color-mix(in srgb,var(--ink) 9%,transparent);overflow:hidden}
+  .dr .b i{display:block;height:100%;background:var(--blue)}
+  .dr.top{color:var(--ink)} .dr.top .b i{background:var(--ember-bright)}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13px;margin:0 0 12px}
+  .kv dt{color:var(--ink-2)} .kv dd{margin:0;font-family:var(--mono);font-size:12.5px}
+  .warm{display:flex;align-items:baseline;gap:10px;margin:0 0 10px}
+  .warm .n{font:800 38px/1 var(--sans);letter-spacing:-.02em}
+  .warm .of{font:12px var(--mono);color:var(--ink-2)}
+  .verdict{border-radius:9px;padding:9px 12px;font-weight:800;font-size:13px}
+  .v-go{background:var(--ember-wash);color:var(--ember)} .v-mid{background:var(--blue-wash);color:var(--blue-deep)}
+  .v-no{background:color-mix(in srgb,var(--ink) 8%,transparent);color:var(--ink-2)}
+  .gold{margin-top:14px;border:1px dashed var(--line-2);border-radius:12px;padding:12px 15px;font-size:13px}
+  .gold b{font-family:var(--mono);font-size:12px}
+  .gold .row2{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+  .gold .why{color:var(--ink-2);margin:6px 0 0;font-size:13px}
+  .gold form{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px}
+  .gold select{border:1px solid var(--line-2);background:var(--raise);border-radius:8px;padding:5px 8px;font-size:13px}
+  .gold label{display:flex;gap:6px;align-items:center;font-size:13px}
+  .gold .warn{flex-basis:100%;color:var(--ember);font-size:12.5px;margin:0}
+  .foot{font:11px var(--mono);color:var(--ink-2);margin-top:10px}
+
+  /* tables and results */
+  table{border-collapse:collapse;width:100%;font-size:13.5px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:11.5px;color:var(--ink-2);font-weight:800;letter-spacing:.03em}
+  td.num,th.num{text-align:right;font-family:var(--mono);white-space:nowrap}
+  .better{color:var(--good);font-weight:700}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+  .conf td,.conf th{text-align:center;font-family:var(--mono);font-size:12px;padding:6px}
+  .conf td.diag{background:var(--good-wash);color:var(--good);font-weight:700}
+  .conf td.off{background:var(--bad-wash);color:var(--bad)}
+  .slots{display:grid;gap:8px}
+  .slot{display:grid;grid-template-columns:minmax(170px,240px) 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:var(--raise)}
+  .slot .k{font:700 11.5px var(--mono);color:var(--ember)}
+  .slot .v{font-size:14px}
+  .miss{cursor:pointer}
+  .miss:hover td{background:color-mix(in srgb,var(--blue-wash) 45%,transparent)}
+  svg text{font-family:var(--mono)}
+  .legend{display:flex;gap:16px;font:12px var(--mono);color:var(--ink-2);margin-top:8px}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+
+  /* try */
+  .form{display:grid;gap:12px;max-width:720px}
+  .form label{font-weight:700;font-size:13px;display:grid;gap:5px}
+  .form textarea,.form input,.form select{border:1px solid var(--line-2);background:var(--raise);border-radius:10px;padding:10px 12px}
+  .form textarea{min-height:160px;font:16px/1.5 var(--serif);resize:vertical}
+  .inline{display:flex;gap:12px;flex-wrap:wrap;align-items:end}
+  .check{display:flex !important;grid-template-columns:none;align-items:center;gap:8px;font-weight:600}
+
+  @media (max-width:860px){
+    .inbox{grid-template-columns:1fr}
+    .inbox{grid-template-rows:auto minmax(0,1fr)}
+    .list{border-right:0;max-height:45vh;border-bottom:1px solid var(--line)}
+    .answers,.grid2{grid-template-columns:1fr}
+    .slot{grid-template-columns:1fr auto}
+    .slot .k{grid-column:1/-1}
+    .top{padding:10px 16px}.tabs,.alerts{padding-left:16px;padding-right:16px}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="brand"><i></i>Reopen Inbox</span>
+  <a class="by" href="https://salesgear.io" target="_blank" rel="noopener">by Salesgear</a>
+  <span class="ds" id="ds">loading…</span>
+  <span class="spacer"></span>
+  <span class="prog" id="prog" hidden><span id="progTxt"></span><span class="bar"><i id="progBar" style="width:0"></i></span></span>
+  <button class="btn primary" id="runJev">Run Jev on all</button>
+  <button class="btn" id="runLlm">Run LLM on all</button>
+</header>
+<nav class="tabs" role="tablist">
+  <button class="tab" role="tab" data-tab="inbox" aria-selected="true">Inbox</button>
+  <button class="tab" role="tab" data-tab="reopen" aria-selected="false">Reopen list</button>
+  <button class="tab" role="tab" data-tab="results" aria-selected="false">Results</button>
+  <button class="tab" role="tab" data-tab="try" aria-selected="false">Try a thread</button>
+</nav>
+<div class="alerts" id="alerts"></div>
+
+<main>
+  <!-- INBOX -->
+  <section class="pane on" id="p-inbox">
+    <div class="inbox">
+      <div class="list">
+        <div class="filters">
+          <input id="q" type="search" placeholder="Search threads" aria-label="Search threads">
+          <select id="show" aria-label="Which model's answers to show">
+            <option value="jev">Show Jev</option><option value="llm">Show LLM</option>
+          </select>
+          <select id="filt" aria-label="Filter">
+            <option value="all">All threads</option>
+            <option value="misses">Misses only</option>
+            <option value="near">Near-misses</option>
+            <option value="todo">Not run yet</option>
+            <option value="g:soft_deferral">Key: soft_deferral</option>
+            <option value="g:hard_no">Key: hard_no</option>
+            <option value="g:went_quiet">Key: went_quiet</option>
+            <option value="g:not_sales">Key: not_sales</option>
+          </select>
+          <select id="sort" aria-label="Sort">
+            <option value="id">Sort: dataset order</option><option value="warmth">Sort: warmth</option>
+          </select>
+        </div>
+        <div class="count" id="count"></div>
+        <div class="rows" id="rows"></div>
+      </div>
+      <div class="detail" id="detail"><div class="empty">Pick a thread on the left.</div></div>
+    </div>
+  </section>
+
+  <!-- REOPEN LIST -->
+  <section class="pane" id="p-reopen"><div class="scroll"><div class="page">
+    <h2>Your reopen list</h2>
+    <p class="sub">The warmest threads, highest first — what a rep would actually reopen this week. With an answer key, each row is checked against it.</p>
+    <div class="filters" style="padding:0 0 14px;border:0">
+      <select id="rModel" aria-label="Model"><option value="jev">Jev</option><option value="llm">LLM</option></select>
+      <select id="rN" aria-label="How many"><option>10</option><option>20</option><option>30</option></select>
+    </div>
+    <div id="reopenBody"></div>
+  </div></div></section>
+
+  <!-- RESULTS -->
+  <section class="pane" id="p-results"><div class="scroll"><div class="page" id="resultsBody"></div></div></section>
+
+  <!-- TRY -->
+  <section class="pane" id="p-try"><div class="scroll"><div class="page">
+    <h2>Try a thread</h2>
+    <p class="sub">Paste any dead thread and ask Jev about it live. Nothing here is added to the dataset or the results.</p>
+    <div class="form">
+      <label>The thread, or the buyer's last message<textarea id="tText" placeholder="Thanks for the demo. We're mid-rollout on a new CRM; let's revisit once that's live, probably early next year."></textarea></label>
+      <div class="inline">
+        <label style="flex:1;min-width:200px">Contact's role<input id="tRole" placeholder="VP Operations"></label>
+        <label>Last message sent<span class="inline" style="gap:6px"><select id="tMon" aria-label="Month"></select><input id="tYear" type="number" min="2000" max="2100" style="width:96px" aria-label="Year"></span></label>
+      </div>
+      <label class="check"><input type="checkbox" id="tSeller"> The last message was mine (no reply)</label>
+      <div><button class="btn primary" id="tRun">Ask Jev</button></div>
+    </div>
+    <div id="tOut" style="margin-top:22px;max-width:720px"></div>
+  </div></div></section>
+</main>
+
+<script>
+(function(){
+  var CLASSES = ['soft_deferral','hard_no','went_quiet','not_sales'];
+  var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var D = null, sel = null, R = null, BL = 'LLM';
+
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function pct(x){ return Math.round(x*100); }
+  function f2(x){ return (x == null ? '—' : Number(x).toFixed(2)); }
+  function api(path, body){
+    return fetch(path, body ? {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)} : {})
+      .then(function(r){ return r.json().then(function(j){ if(!r.ok) throw new Error(j.error || ('HTTP '+r.status)); return j; }); });
+  }
+  function verdict(a){
+    if(!a) return null;
+    if(a.choice==='soft_deferral' && a.warmth>=55) return ['v-go','Reopenable: draft a re-open from the original thread'];
+    if(a.choice==='went_quiet' && a.warmth>=42) return ['v-mid','Worth a nudge: the door never actually closed'];
+    if(a.choice==='hard_no') return ['v-no','Skip: the buyer declined'];
+    if(a.choice==='not_sales') return ['v-no','Ignore: not a sales thread'];
+    return ['v-no','Low priority: thin signal to reopen'];
+  }
+  function warmColor(a){
+    if(!a) return 'var(--line-2)';
+    if(a.choice==='soft_deferral' && a.warmth>=55) return 'var(--ember-bright)';
+    if(a.choice==='soft_deferral' || (a.choice==='went_quiet' && a.warmth>=42)) return 'var(--blue)';
+    return 'var(--line-2)';
+  }
+  function lastText(t){ return t.messages[t.messages.length-1].text; }
+  function isSeller(m){ return /seller|\(me\)/i.test(m.from); }
+
+  // ---------- load ----------
+  function load(){
+    return api('/api/data').then(function(d){
+      D = d;
+      $('ds').textContent = d.dataset + ' · ' + d.threads.length + ' threads · as of ' + d.as_of;
+      alerts(); job(d.job); renderList(); renderDetail(); renderReopen();
+      if(document.querySelector('.tab[data-tab="results"]').getAttribute('aria-selected')==='true') loadResults();
+    }).catch(function(e){ $('ds').textContent = 'Could not reach the app server: ' + e.message; });
+  }
+  function alerts(){
+    var h = '';
+    if(D.errors.length) h += '<div class="alert"><b>Dataset problems</b> — fix these in your files, then reload:<ul>' + D.errors.slice(0,12).map(function(e){ return '<li>'+esc(e)+'</li>'; }).join('') + (D.errors.length>12 ? '<li>…and '+(D.errors.length-12)+' more</li>' : '') + '</ul></div>';
+    if(!D.ready.jev) h += '<div class="alert"><b>No TypeSafe key.</b> Add <code>TYPESAFE_API_KEY=…</code> to <code>.env</code> in the repo, then restart the app.</div>';
+    if(!D.ready.llm) h += '<div class="alert"><b>'+esc(D.baseline.label)+' baseline not ready.</b> '+esc(D.baseline.hint)+'</div>';
+    BL = D.baseline.label;
+    $('runLlm').textContent = 'Run '+BL+' on all';
+    $('show').options[1].textContent = 'Show '+BL; $('rModel').options[1].textContent = BL;
+    if(!D.has_labels) h += '<div class="alert"><b>No answer key.</b> Add <code>labels.csv</code> next to <code>threads.jsonl</code> to get accuracy, the reopen check and the newsletter numbers.</div>';
+    $('alerts').innerHTML = h;
+    $('runJev').disabled = !D.ready.jev; $('runLlm').disabled = !D.ready.llm;
+  }
+
+  // ---------- run all ----------
+  var polling = null;
+  function job(j){
+    var running = j && j.running;
+    $('prog').hidden = !(j && (j.running || j.total));
+    if(j && j.total !== undefined){
+      var name = j.model==='llm' ? BL : 'Jev';
+      $('progTxt').textContent = j.running ? name+' '+j.done+'/'+j.total+' · '+j.wall_s+'s'
+        : (j.total ? (j.skipped ? name+' stopped: daily limit reached, '+(j.done-j.skipped-j.errors.length)+' answered, '+j.skipped+' not run'
+                               : name+' done: '+j.done+' calls in '+j.wall_s+'s'+(j.errors.length ? ' · '+j.errors.length+' failed' : '')) : '');
+      $('progBar').style.width = (j.total ? pct(j.done/j.total) : 0)+'%';
+    }
+    $('runJev').disabled = running || !D.ready.jev; $('runLlm').disabled = running || !D.ready.llm;
+    if(running && !polling){
+      polling = setInterval(function(){
+        api('/api/job').then(function(s){
+          job(s);
+          if(!s.running){ clearInterval(polling); polling = null; load();
+            if(s.errors.length) $('alerts').insertAdjacentHTML('afterbegin','<div class="alert"><b>'+s.errors.length+' calls failed</b> (they will be retried on the next run):<ul>'+s.errors.slice(0,8).map(function(e){return '<li>'+esc(e)+'</li>';}).join('')+'</ul></div>');
+          }
+        });
+      }, 1000);
+    }
+  }
+  function runAll(model){
+    var todo = D.threads.filter(function(t){ return !t[model]; }).length;
+    if(!todo){ alert('Every thread already has a cached '+(model==='llm'?BL:'Jev')+' answer.'); return; }
+    api('/api/run-all', {model:model}).then(job).catch(function(e){ alert(e.message); });
+  }
+  $('runJev').onclick = function(){ runAll('jev'); };
+  $('runLlm').onclick = function(){ runAll('llm'); };
+
+  // ---------- inbox ----------
+  function visible(){
+    var q = $('q').value.trim().toLowerCase(), f = $('filt').value, m = $('show').value;
+    var rows = D.threads.filter(function(t){
+      var a = t[m];
+      if(q && (t.id+' '+t.contact_role+' '+t.messages.map(function(x){return x.text;}).join(' ')).toLowerCase().indexOf(q) < 0) return false;
+      if(f==='misses') return a && t.gold && a.choice !== t.gold.label;
+      if(f==='near') return t.gold && t.gold.near_miss;
+      if(f==='todo') return !a;
+      if(f.indexOf('g:')===0) return t.gold && t.gold.label === f.slice(2);
+      return true;
+    });
+    if($('sort').value==='warmth') rows.sort(function(x,y){ return ((y[m]||{}).warmth||-1) - ((x[m]||{}).warmth||-1); });
+    return rows;
+  }
+  function renderList(){
+    var m = $('show').value, rows = visible();
+    var done = D.threads.filter(function(t){ return t[m]; }).length;
+    $('count').textContent = rows.length + ' shown · ' + done + '/' + D.threads.length + ' run on ' + (m==='llm'?BL:'Jev');
+    $('rows').innerHTML = rows.map(function(t){
+      var a = t[m], g = t.gold;
+      var mark = a && g ? (a.choice===g.label ? '<span class="mark ok" title="matches the answer key">✓</span>' : '<span class="mark no" title="key says '+esc(g.label)+'">✗</span>') : '';
+      return '<button class="row'+(sel===t.id?' sel':'')+'" data-id="'+esc(t.id)+'">'
+        + '<span class="dot" style="background:'+warmColor(a)+'"></span>'
+        + '<span><span class="who">'+esc(t.contact_role)+(a ? ' <span class="chip c-'+esc(a.choice)+'">'+esc(a.choice)+'</span>' : '')+' '+mark+'</span>'
+        + '<span class="snip">'+esc(lastText(t))+'</span></span>'
+        + '<span class="dt">'+esc(t.id)+'<br>'+esc(t.last_message_sent)+(a ? '<span class="w">'+a.warmth+'</span>' : '')+'</span></button>';
+    }).join('') || '<div class="empty">No threads match.</div>';
+    Array.prototype.forEach.call($('rows').querySelectorAll('.row'), function(b){
+      b.onclick = function(){ sel = b.getAttribute('data-id'); renderList(); renderDetail(); };
+    });
+  }
+  ['q','show','filt','sort'].forEach(function(id){ $(id).addEventListener('input', renderList); });
+
+  function answerCard(label, model, a, t){
+    var run = model==='jev' ? D.ready.jev : model==='llm' ? D.ready.llm : false;
+    var head = '<h3><span>'+label+'</span>'+(run ? '<button class="btn" data-run="'+model+'">'+(a?'Re-run':'Run')+'</button>' : '')+'</h3>';
+    if(!a) return '<div class="card">'+head+'<p class="muted" style="margin:0">Not run yet.</p></div>';
+    var order = Object.keys(a.probs).sort(function(x,y){ return a.probs[y]-a.probs[x]; });
+    var v = verdict(a);
+    return '<div class="card">'+head
+      + '<div class="cat"><span class="chip c-'+esc(a.choice)+'">'+esc(a.choice)+'</span><span class="mono muted" style="font-size:12px">confidence <b style="color:var(--ink)">'+f2(a.confidence)+'</b></span>'+(a.note?'<span class="chip c-refused">'+esc(a.note)+'</span>':'')+'</div>'
+      + '<div class="dist">'+order.map(function(k){ return '<div class="dr'+(k===a.choice?' top':'')+'"><span>'+esc(k)+'</span><span class="b"><i style="width:'+pct(a.probs[k])+'%"></i></span><span>'+pct(a.probs[k])+'%</span></div>'; }).join('')+'</div>'
+      + '<dl class="kv"><dt>Named a trigger</dt><dd>'+f2(a.named_trigger)+'</dd>'
+      + '<dt>Come back in</dt><dd>'+esc(a.timeframe.replace(/_/g,' '))+'</dd>'
+      + '<dt>Trigger clarity</dt><dd>'+f2(a.sub.trigger)+'</dd><dt>Seniority</dt><dd>'+f2(a.sub.seniority)+'</dd>'
+      + '<dt>Timing ripeness</dt><dd>'+f2(a.sub.ripeness)+' <span class="muted">('+t.months_elapsed+' mo since)</span></dd></dl>'
+      + '<div class="warm"><span class="n" style="color:'+warmColor(a)+'">'+a.warmth+'</span><span class="of">/ 100 warmth</span></div>'
+      + '<div class="verdict '+v[0]+'">'+esc(v[1])+'</div>'
+      + '<div class="foot">'+esc(a.model||'')+' · '+f2(a.latency_s)+'s · $'+a.cost_usd.toFixed(6)+'</div></div>';
+  }
+  function renderDetail(){
+    var t = D && D.threads.filter(function(x){ return x.id===sel; })[0];
+    if(!t){ $('detail').innerHTML = '<div class="empty">Pick a thread on the left.</div>'; return; }
+    var g = t.gold;
+    $('detail').innerHTML = '<div class="page">'
+      + '<h2>'+esc(t.contact_role)+'</h2>'
+      + '<div class="meta"><span>'+esc(t.id)+'</span><span>last message '+esc(t.last_message_sent)+'</span><span>'+t.months_elapsed+' months ago</span></div>'
+      + '<div class="msgs">'+t.messages.map(function(m){ return '<div class="msg'+(isSeller(m)?' me':'')+'"><p class="from">'+esc(m.from)+'</p><p class="tx">'+esc(m.text)+'</p></div>'; }).join('')+'</div>'
+      + '<div class="answers">'+answerCard('JEV','jev',t.jev,t)+answerCard(BL.toUpperCase()+' (BASELINE)','llm',t.llm,t)+'</div>'
+      + goldBox(t)
+      + '</div>';
+    wireGold(t);
+    Array.prototype.forEach.call($('detail').querySelectorAll('[data-run]'), function(b){
+      b.onclick = function(){
+        var model = b.getAttribute('data-run'); b.disabled = true; b.textContent = 'Running…';
+        api('/api/run-one', {model:model, id:t.id}).then(function(v){ t[model] = v; renderList(); renderDetail(); renderReopen(); })
+          .catch(function(e){ b.disabled = false; b.textContent = 'Retry'; alert(e.message); });
+      };
+    });
+  }
+
+  // answer key: shown under the model answers, correctable in place (saved to answer_key_edits.json)
+  var editing = null;
+  var TIMEFRAMES = ['within_3_months','3_to_6_months','6_to_12_months','over_a_year','not_stated'];
+  function opts(list, cur){ return list.map(function(v){ return '<option'+(v===cur?' selected':'')+'>'+v+'</option>'; }).join(''); }
+  function goldBox(t){
+    var g = t.gold;
+    if(!D.has_labels) return '';
+    if(editing === t.id){
+      var cur = g || {label:'soft_deferral', timeframe:'not_stated', near_miss:false, reopen_worthy:false};
+      return '<div class="gold"><b>Correct the answer key</b><form id="gForm">'
+        + '<select name="label" aria-label="Label">'+opts(CLASSES, cur.label)+'</select>'
+        + '<select name="timeframe" aria-label="Come back in">'+opts(TIMEFRAMES, cur.timeframe)+'</select>'
+        + '<label><input type="checkbox" name="near_miss"'+(cur.near_miss?' checked':'')+'> near-miss</label>'
+        + '<label><input type="checkbox" name="reopen_worthy"'+(cur.reopen_worthy?' checked':'')+'> worth reopening</label>'
+        + '<button class="btn primary" type="submit">Save</button><button class="btn" type="button" id="gCancel">Cancel</button>'
+        + ((t.jev || t.llm) ? '<p class="warn">A model has already answered this thread. The change will be recorded as made after the run, and flagged in the results.</p>' : '')
+        + '</form></div>';
+    }
+    if(!g) return '<div class="gold"><div class="row2"><span>No answer key for this thread.</span><button class="btn" id="gEdit">Add answer</button></div></div>';
+    return '<div class="gold"><div class="row2"><span>Answer key: <b class="chip c-'+esc(g.label)+'">'+esc(g.label)+'</b> · come back in <b>'+esc(g.timeframe.replace(/_/g,' '))+'</b> · '
+      + (g.reopen_worthy ? '<b class="ok">worth reopening</b>' : '<b>not worth reopening</b>') + (g.near_miss ? ' · <b style="color:var(--ember)">near-miss</b>' : '')
+      + (g.edited ? ' · <b style="color:var(--ember)">corrected'+(g.edited_after_run?' after a run':'')+'</b>' : '') + '</span>'
+      + '<span><button class="btn" id="gEdit">Correct</button>'+(g.edited ? ' <button class="btn" id="gUndo">Undo correction</button>' : '')+'</span></div>'
+      + (g.note ? '<p class="why">Why: '+esc(g.note)+'</p>' : '')
+      + (g.edited && g.was ? '<p class="why">Originally: '+esc(g.was.label)+' · '+esc(g.was.timeframe.replace(/_/g,' '))+(g.was.reopen_worthy?' · worth reopening':'')+'</p>' : '')
+      + '</div>';
+  }
+  function wireGold(t){
+    var e = $('gEdit'), u = $('gUndo'), f = $('gForm'), c = $('gCancel');
+    if(e) e.onclick = function(){ editing = t.id; renderDetail(); };
+    if(c) c.onclick = function(){ editing = null; renderDetail(); };
+    var save = function(body){ api('/api/label', body).then(function(){ editing = null; return load(); }).catch(function(err){ alert(err.message); }); };
+    if(u) u.onclick = function(){ save({id:t.id, revert:true}); };
+    if(f) f.onsubmit = function(ev){
+      ev.preventDefault();
+      save({id:t.id, label:f.label.value, timeframe:f.timeframe.value, near_miss:f.near_miss.checked, reopen_worthy:f.reopen_worthy.checked});
+    };
+  }
+
+  // ---------- reopen list ----------
+  function renderReopen(){
+    if(!D) return;
+    var m = $('rModel').value, n = +$('rN').value;
+    var ranked = D.threads.filter(function(t){ return t[m]; }).sort(function(x,y){ return y[m].warmth - x[m].warmth || (x.id<y.id?-1:1); }).slice(0,n);
+    if(!ranked.length){ $('reopenBody').innerHTML = '<p class="muted">Run '+(m==='llm'?BL:'Jev')+' first.</p>'; return; }
+    var keyed = ranked.filter(function(t){ return t.gold; });
+    var hits = keyed.filter(function(t){ return t.gold.reopen_worthy; }).length;
+    $('reopenBody').innerHTML = (keyed.length ? '<p><b>'+hits+' of '+keyed.length+'</b> are worth reopening according to your answer key (precision@'+n+' '+f2(hits/keyed.length)+').</p>' : '')
+      + '<table><thead><tr><th class="num">#</th><th>Contact</th><th>What they said</th><th>Model says</th><th class="num">Warmth</th>'+(keyed.length?'<th>Key</th>':'')+'</tr></thead><tbody>'
+      + ranked.map(function(t,i){
+          var a = t[m];
+          return '<tr class="miss" data-id="'+esc(t.id)+'"><td class="num">'+(i+1)+'</td><td><b>'+esc(t.contact_role)+'</b><br><span class="mono muted" style="font-size:11px">'+esc(t.id)+' · '+esc(t.last_message_sent)+'</span></td>'
+            + '<td style="font-family:var(--serif);font-size:15px">'+esc(lastText(t).slice(0,180))+'</td><td><span class="chip c-'+esc(a.choice)+'">'+esc(a.choice)+'</span></td>'
+            + '<td class="num"><b>'+a.warmth+'</b></td>'+(keyed.length ? '<td>'+(t.gold ? (t.gold.reopen_worthy ? '<span class="ok mark">✓ reopen</span>' : '<span class="no mark">✗ '+esc(t.gold.label)+'</span>') : '')+'</td>' : '')+'</tr>';
+        }).join('') + '</tbody></table>';
+    wireOpen($('reopenBody'));
+  }
+  $('rModel').addEventListener('input', renderReopen); $('rN').addEventListener('input', renderReopen);
+  function wireOpen(root){
+    Array.prototype.forEach.call(root.querySelectorAll('[data-id]'), function(tr){
+      tr.onclick = function(){ sel = tr.getAttribute('data-id'); $('filt').value = 'all'; $('q').value = ''; showTab('inbox'); renderList(); renderDetail();
+        var r = $('rows').querySelector('.row.sel'); if(r) r.scrollIntoView({block:'center'}); };
+    });
+  }
+
+  // ---------- results ----------
+  var ROWS = [
+    ['accuracy','Accuracy','Share of threads put in the right category.',1],
+    ['near_miss_accuracy','Accuracy on near-misses','Same, on the tricky threads only.',1],
+    ['deferral_precision','Deferral precision','Of threads flagged soft_deferral, the share that really were.',1],
+    ['deferral_recall','Deferral recall','Of the real soft deferrals, the share it caught.',1],
+    ['precision_at_10','Precision@10','Of the top ten by warmth, the share worth reopening.',1],
+    ['timeframe_accuracy_on_deferrals','Timeframe accuracy','On real deferrals, picked the right come-back window.',1],
+    ['ece','Calibration error (ECE)','Gap between stated confidence and real accuracy. Lower is better.',-1],
+    ['cost_usd_per_10k','Cost per 10k threads ($)','From real token usage and list prices.',-1],
+    ['median_call_s','Median time per thread (s)','One API call per thread.',-1],
+    ['wall_s_per_10k','Time for 10k threads (s)','Extrapolated from this run. Jev runs 8 calls in parallel; a free-tier baseline runs fewer and waits on rate limits, so compare per-thread time above.',-1]
+  ];
+  function loadResults(){
+    $('resultsBody').innerHTML = '<p class="muted">Scoring…</p>';
+    api('/api/results').then(function(r){ R = r; renderResults(); }).catch(function(e){ $('resultsBody').innerHTML = '<p class="no">'+esc(e.message)+'</p>'; });
+  }
+  function renderResults(){
+    var M = R.models, j = M.jev, l = M.llm, h = '';
+    if(!D.has_labels){ $('resultsBody').innerHTML = '<h2>Results</h2><p class="muted">Add labels.csv to your dataset folder to score the models.</p>'; return; }
+    if(!j && !l){ $('resultsBody').innerHTML = '<h2>Results</h2><p class="muted">Run Jev (and the LLM) first. Numbers appear here as soon as some threads are done.</p>'; return; }
+    h += '<h2>Results</h2><p class="sub">Scored against your answer key'+(j?' · Jev '+j.scored+'/'+j.of:'')+(l?' · '+esc(BL)+' '+l.scored+'/'+l.of:'')+'. The same warmth code is applied to both models, so differences come from their judgments alone.</p>';
+    var partial = (j && j.scored < j.of) || (l && l.scored < l.of);
+    if(partial && j && l) h += '<div class="alert" style="margin:0 0 14px"><b>Not comparable yet.</b> '
+      + [['Jev', j], [BL, l]].filter(function(p){ return p[1].scored < p[1].of; }).map(function(p){ return esc(p[0])+' has answered '+p[1].scored+' of '+p[1].of; }).join(' and ')
+      + ' emails, so no winner is highlighted until both have answered all of them.</div>';
+    h += '<table><thead><tr><th>Metric</th><th class="num">Jev'+(j?'<br><span class="muted" style="font-weight:500">'+esc(j.model)+'</span>':'')+'</th><th class="num">'+esc(BL)+(l && l.scored < l.of ? '<br><span class="muted" style="font-weight:500">'+l.scored+' of '+l.of+' only</span>' : '')+(l?'<br><span class="muted" style="font-weight:500">'+esc(l.model)+'</span>':'')+'</th><th>What it means</th></tr></thead><tbody>';
+    ROWS.forEach(function(row){
+      var k = row[0], a = j && j[k], b = l && l[k], best = null;
+      if(j && l && a !== b && !partial) best = (row[3] > 0 ? a > b : a < b) ? 'j' : 'l';
+      var fmt = function(x){ return x == null ? '—' : k==='cost_usd_per_10k' ? '$'+x.toFixed(2) : k==='wall_s_per_10k' ? x.toFixed(0) : x.toFixed(k==='ece'?3:2); };
+      var dim = function(m){ return m && m.scored < m.of ? ' muted' : ''; };
+      h += '<tr><td><b>'+row[1]+'</b></td><td class="num'+(best==='j'?' better':'')+dim(j)+'">'+fmt(a)+'</td><td class="num'+(best==='l'?' better':'')+dim(l)+'">'+fmt(b)+'</td><td class="muted">'+row[2]+'</td></tr>';
+    });
+    h += '</tbody></table>';
+    if(l && l.refusals) h += '<p class="muted" style="font-size:13px">'+esc(BL)+' declined, was cut off or returned unusable output on '+l.refusals+' threads; those count as wrong.</p>';
+
+    h += '<div class="grid2"><div class="card"><h3>CALIBRATION</h3>'+calib(j,l)+'<div class="legend">'+(j?'<span><i style="background:var(--ember-bright)"></i>Jev</span>':'')+(l?'<span><i style="background:var(--blue)"></i>'+esc(BL)+'</span>':'')+'<span>dashed = perfect</span></div></div>';
+    h += '<div class="card"><h3>WHERE IT WENT WRONG (JEV)</h3>'+(j ? confusion(j) : '<p class="muted">Run Jev first.</p>')+'</div></div>';
+
+    h += '<h2 style="margin-top:28px">Numbers for the newsletter</h2><p class="sub">Each line fills one orange placeholder on the page. Check them, then paste.</p>';
+    if(R.slots._note) h += '<div class="alert" style="margin:0 0 12px"><b>Provisional.</b> '+esc(R.slots._note)+'</div>';
+    if(R.slots._edits) h += '<div class="alert" style="margin:0 0 12px"><b>Answer key changed after a run.</b> '+esc(R.slots._edits)+'</div>';
+    h += '<div class="slots">'+Object.keys(R.slots).filter(function(k){ return k.charAt(0)!=='_'; }).map(function(k){
+      return '<div class="slot"><span class="k">'+esc(k)+'</span><span class="v">'+esc(R.slots[k])+'</span><button class="btn" data-copy="'+esc(R.slots[k])+'">Copy</button></div>';
+    }).join('')+'</div><p><button class="btn" id="copyAll">Copy all as text</button> <a class="btn" href="/api/results/download" download style="text-decoration:none;display:inline-block">Download results.json</a></p>'
+      + '<p class="muted" style="font-size:13px">A copy is also saved as <code>results.json</code> in your dataset folder every time this tab loads'+(R.edits && R.edits.total ? ' · '+R.edits.total+' answers corrected in the app' : '')+'.</p>';
+
+    var src = j || l, name = j ? 'Jev' : BL;
+    h += '<h2 style="margin-top:28px">Every miss ('+name+', '+src.misses.length+')</h2><p class="sub">Read these before writing “Where Jev got it wrong”. Click one to open the thread.</p>';
+    h += '<table><thead><tr><th>Thread</th><th>Key</th><th>Model said</th><th class="num">Conf.</th><th>Last message</th></tr></thead><tbody>'
+      + src.misses.map(function(m){ return '<tr class="miss" data-id="'+esc(m.id)+'"><td class="mono">'+esc(m.id)+(m.near_miss?' <span class="chip c-soft_deferral">near</span>':'')+'</td><td><span class="chip c-'+esc(m.gold)+'">'+esc(m.gold)+'</span></td><td><span class="chip c-'+esc(m.pred)+'">'+esc(m.pred)+'</span></td><td class="num">'+f2(m.confidence)+'</td><td style="font-family:var(--serif)">'+esc(m.text)+'</td></tr>'; }).join('')
+      + '</tbody></table>';
+    $('resultsBody').innerHTML = h;
+    wireOpen($('resultsBody'));
+    Array.prototype.forEach.call($('resultsBody').querySelectorAll('[data-copy]'), function(b){
+      b.onclick = function(){ copy(b.getAttribute('data-copy'), b); };
+    });
+    $('copyAll').onclick = function(){
+      copy(Object.keys(R.slots).filter(function(k){ return k.charAt(0)!=='_'; }).map(function(k){ return k+': '+R.slots[k]; }).join('\n'), $('copyAll'));
+    };
+  }
+  function copy(text, btn){
+    var done = function(){ var o = btn.textContent; btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = o; }, 1200); };
+    if(navigator.clipboard) navigator.clipboard.writeText(text).then(done, function(){ prompt('Copy this:', text); });
+    else prompt('Copy this:', text);
+  }
+  function calib(j, l){
+    var W=320,H=220,x0=40,y0=180,x1=305,y1=14;
+    var X=function(v){ return x0+(x1-x0)*v; }, Y=function(v){ return y0-(y0-y1)*v; };
+    var s='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Calibration: accuracy against stated confidence">';
+    [0,.5,1].forEach(function(v){ s+='<line x1="'+x0+'" x2="'+x1+'" y1="'+Y(v)+'" y2="'+Y(v)+'" stroke="var(--line)"/><text x="'+(x0-6)+'" y="'+(Y(v)+3)+'" font-size="9" text-anchor="end" fill="var(--ink-2)">'+pct(v)+'</text><text x="'+X(v)+'" y="'+(y0+14)+'" font-size="9" text-anchor="middle" fill="var(--ink-2)">'+pct(v)+'</text>'; });
+    s+='<line x1="'+X(0)+'" y1="'+Y(0)+'" x2="'+X(1)+'" y2="'+Y(1)+'" stroke="var(--line-2)" stroke-dasharray="4 4"/>';
+    s+='<text x="'+((x0+x1)/2)+'" y="'+(H-4)+'" font-size="9.5" text-anchor="middle" fill="var(--ink-2)">stated confidence →</text>';
+    s+='<text x="10" y="'+((y0+y1)/2)+'" font-size="9.5" text-anchor="middle" fill="var(--ink-2)" transform="rotate(-90 10 '+((y0+y1)/2)+')">accuracy</text>';
+    [[j,'var(--ember-bright)'],[l,'var(--blue)']].forEach(function(p){
+      if(!p[0]) return;
+      var pts = p[0].reliability.map(function(b){ return X(b.conf)+','+Y(b.acc); }).join(' ');
+      s+='<polyline points="'+pts+'" fill="none" stroke="'+p[1]+'" stroke-width="2"/>';
+      p[0].reliability.forEach(function(b){ s+='<circle cx="'+X(b.conf)+'" cy="'+Y(b.acc)+'" r="'+Math.max(3,Math.min(8,Math.sqrt(b.n)))+'" fill="'+p[1]+'" fill-opacity=".85"><title>'+pct(b.conf)+'% sure → '+pct(b.acc)+'% right ('+b.n+' threads)</title></circle>'; });
+    });
+    return s+'</svg>';
+  }
+  function confusion(m){
+    var h='<table class="conf"><thead><tr><th>key ↓ / said →</th>'+CLASSES.map(function(c){ return '<th>'+c.replace('_','_<wbr>')+'</th>'; }).join('')+'</tr></thead><tbody>';
+    CLASSES.forEach(function(g){
+      h+='<tr><th style="text-align:left">'+g+'</th>'+CLASSES.map(function(p){ var v=m.confusion[g][p]; return '<td class="'+(g===p?'diag':(v?'off':''))+'">'+v+'</td>'; }).join('')+'</tr>';
+    });
+    return h+'</tbody></table>';
+  }
+
+  // ---------- try ----------
+  $('tMon').innerHTML = MONTHS.map(function(m,i){ return '<option value="'+m+'">'+m+'</option>'; }).join('');
+  (function(){ var d = new Date(); d.setMonth(d.getMonth()-6); $('tMon').value = MONTHS[d.getMonth()]; $('tYear').value = d.getFullYear(); })();
+  $('tRun').onclick = function(){
+    var text = $('tText').value.trim();
+    if(!text){ $('tText').focus(); return; }
+    var b = $('tRun'); b.disabled = true; b.textContent = 'Asking Jev…';
+    var t = {months_elapsed: 0};
+    api('/api/try', {text:text, contact_role:$('tRole').value.trim(), last_message_sent:$('tMon').value+' '+$('tYear').value, last_from_seller:$('tSeller').checked})
+      .then(function(a){
+        var mo = (function(){ var p = D.as_of.split(' '); return (+p[1]-(+$('tYear').value))*12 + (MONTHS.indexOf(p[0])-MONTHS.indexOf($('tMon').value)); })();
+        t.months_elapsed = mo;
+        $('tOut').innerHTML = answerCard('JEV · LIVE', 'try', a, t);
+      })
+      .catch(function(e){ $('tOut').innerHTML = '<p class="no">'+esc(e.message)+'</p>'; })
+      .then(function(){ b.disabled = false; b.textContent = 'Ask Jev'; });
+  };
+
+  // ---------- tabs ----------
+  function showTab(name){
+    Array.prototype.forEach.call(document.querySelectorAll('.tab'), function(t){ t.setAttribute('aria-selected', t.getAttribute('data-tab')===name ? 'true' : 'false'); });
+    Array.prototype.forEach.call(document.querySelectorAll('.pane'), function(p){ p.classList.toggle('on', p.id==='p-'+name); });
+    if(name==='results' && D) loadResults();
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.tab'), function(t){ t.onclick = function(){ showTab(t.getAttribute('data-tab')); }; });
+
+  load();
+})();
+</script>
+</body>
+</html>
